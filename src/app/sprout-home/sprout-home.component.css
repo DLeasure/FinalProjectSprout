@@ -1,0 +1,11 @@
+#banner{
+  display: fixed;
+  width: 100%;
+  height: 20px;
+  background-color: green;
+}
+
+#navBar {
+  display: flex;
+  flex-direction: column;
+}
