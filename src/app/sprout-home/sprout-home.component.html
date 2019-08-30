@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <header>
   <div id="banner">
-    <a href="">About Us</a>
+    <nav role="navigation">
+        <div id="menuToggle">
+    
+          <input type="checkbox" />
+        
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <ul id="menu">
+            <a href="#"><li>Home</li></a>
+            <a href="#"><li>Reduce</li></a>
+            <a href="#"><li>Reuse</li></a>
+            <a href="#"><li>Recycle</li></a>
+            <a href="#"><li>About Us</li></a>
+          </ul>
+        </div>
+        <button id="aboutButton">
+            <a href="#">About Us</a>
+        </button>
+      </nav>
   </div>
+
 </header>
 
 <body>
-  <nav id="navBar">
-    <a href="">Reduce</a>
-    <a href="">Reuse</a>
-    <a href="">Recycle</a>
-    <a href="">Grow Your Sprout</a>
-  </nav>
-The content of the document......
-</body>
+    <div>
+        <button (click)="requestLatLon()">Test API</button>
+    
+        {{ latitude }}
+        {{ longitude }}
+    </div>
 
+</body>
 </html>
