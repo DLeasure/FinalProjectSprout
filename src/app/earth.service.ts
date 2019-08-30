@@ -8,15 +8,13 @@ export class EarthService {
 
   constructor(private http: HttpClient) { }
 
-  earthURL : string = 'http://api.earth911.com/earth911.';
-
-  earthAPIKey : string = 'eb3751a3e2f435e6';
-
-  latitude: number;
-
   getUsersLatLon(country, ZIP) {
-    return this.http.get("http://localhost:3500/");
+    return this.http.get("http://localhost:3500/latLon/" + country + "/" + ZIP);
     // })
   };
 
-}
+  getLocationFromLatLon(latitude, longitude) {
+    return this.http.get("http://localhost:3500/location/" + latitude + "/" + longitude);
+  }
+
+};
