@@ -46,4 +46,14 @@ routes.get("/location/:latitude/:longitude", (req, res) => {
     // res.end();
 });
 
+routes.get("/reduce", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    axios.get('https://api.earth911.com/earth911.searchArticles?api_key=eb3751a3e2f435e6&query=reduce').then(response => {
+        res.status(200).send(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+})
+
 module.exports = routes; 
