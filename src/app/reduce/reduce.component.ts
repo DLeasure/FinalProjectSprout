@@ -18,7 +18,7 @@ export class ReduceComponent implements OnInit {
 
   requestReduceArticles () {
     this.earthService.getReduceArticles().subscribe( res => {
-      this.allArticles = res.result;
+      this.allArticles = res['result'];
       console.log(this.allArticles);
     })
   }
@@ -33,7 +33,6 @@ export class ReduceComponent implements OnInit {
       this.reduceDes = this.articleDets.description;
     });
   };
-
   ngOnInit() {
   }
 };

@@ -8,23 +8,23 @@
     <nav role="navigation">
         <div id="menuToggle">
     
-          <input type="checkbox" />
+          <input type="checkbox" id="menuButton" />
         
           <span></span>
           <span></span>
           <span></span>
           
           <ul id="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Reduce</li></a>
-            <a href="#"><li>Reuse</li></a>
-            <a href="#"><li>Recycle</li></a>
-            <a href="#"><li>About Us</li></a>
+            <a (click)="optionClicked()" routerLink="home"><li>Home</li></a>
+            <a (click)="optionClicked()" routerLink="reduce"><li>Reduce</li></a>
+            <a (click)="optionClicked()" routerLink="reuse"><li>Reuse</li></a>
+            <a (click)="optionClicked()" routerLink="recycle"><li>Recycle</li></a>
+            <a (click)="optionClicked()" routerLink="AboutUs"><li>About Us</li></a>
           </ul>
+          <div>
+            <p></p>
+          </div>
         </div>
-        <button id="aboutButton">
-            <a href="#">About Us</a>
-        </button>
       </nav>
   </div>
 
@@ -36,10 +36,9 @@
     
         {{ latitude }}
         {{ longitude }}
-    </div>
+    </div>  
 
-    <div id="reduce">
-      <app-reduce></app-reduce>
-    </div>
+   
+<router-outlet></router-outlet>
 </body>
 </html>
