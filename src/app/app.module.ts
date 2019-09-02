@@ -6,12 +6,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { SproutHomeComponent } from './sprout-home/sprout-home.component';
+import { ReduceComponent } from './reduce/reduce.component';
 // import { EarthService } from './earth.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SproutHomeComponent
+    SproutHomeComponent,
+    ReduceComponent
   ],
   imports: [
     BrowserModule,
