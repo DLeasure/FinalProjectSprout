@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EarthService } from '../earth.service';
-import { FormsModule } from '@angular/forms';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-reduce',
@@ -10,8 +10,9 @@ import { FormsModule } from '@angular/forms';
 export class ReduceComponent implements OnInit {
 
   allArticles : [];
+  articleDets : {};
+  reduceURL : string = "";
   reduceDes : string;
-  reduceURL : string = ""
 
   constructor(private earthService: EarthService) { }
 
@@ -23,16 +24,16 @@ export class ReduceComponent implements OnInit {
   }
 
   requestArticleDetails (e) {
-    this.reduceURL = e.target.value;
+    this.reduceURL = encodeURIComponent(e.target.value);
     console.log(this.reduceURL);
-    this.earthService.getArticleDetails(this.reduceURL).subscribe (res => {
-      this.reduceDes = res.result.description;
-      console.log(this.reduceDes);
-    })
-  }
+    let test = decodeURIComponent(this.reduceURL);
+    console.log(test);
+    this.earthService.getArticleDetails(this.reduceURL).subscribe ( res => {
+      this.articleDets = res[`${test}`];
+      this.reduceDes = this.articleDets.description;
+    });
+  };
 
   ngOnInit() {
   }
-
-
-}
+};
