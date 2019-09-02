@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EarthService } from '../earth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reduce',
@@ -10,7 +11,7 @@ export class ReduceComponent implements OnInit {
 
   allArticles : [];
   reduceDes : string;
-  reduceURL : string = "http://earth911.com/news/2012/10/03/5-signs-you-might-be-a-recycling-hoarder/ "
+  reduceURL : string = ""
 
   constructor(private earthService: EarthService) { }
 
@@ -21,8 +22,10 @@ export class ReduceComponent implements OnInit {
     })
   }
 
-  requestArticleDetails (reduceURL) {
-    this.earthService.getArticleDetails(reduceURL).subscribe (res => {
+  requestArticleDetails (e) {
+    this.reduceURL = e.target.value;
+    console.log(this.reduceURL);
+    this.earthService.getArticleDetails(this.reduceURL).subscribe (res => {
       this.reduceDes = res.result.description;
       console.log(this.reduceDes);
     })

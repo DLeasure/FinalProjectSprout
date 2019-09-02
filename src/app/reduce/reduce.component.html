@@ -4,5 +4,6 @@
 
 <div *ngFor="let article of allArticles">
   <p> {{article.description}}</p>
-  <a href="{{ article.url }}" > Click Here </a>
+  <button value="{{article.url}}" (click)="requestArticleDetails($event)"><a href="{{ article.url }}"></a> Click Here
+    </button>
 </div>
