@@ -17,4 +17,13 @@ export class EarthService {
     return this.http.get("http://localhost:3500/location/" + latitude + "/" + longitude);
   }
 
+  //function to get Reduce articles from Proxy Server
+  getReduceArticles() {
+    return this.http.get("http://localhost:3500/reduce/");
+  }
+
+  //function to get Reduce article details from Proxy Server
+  getArticleDetails(reduceURL) {
+    return this.http.get("http;//localhost:3500/reduce/" + reduceURL)
+  }
 };
