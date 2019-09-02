@@ -1,0 +1,23 @@
+<p>recycle works!</p>
+
+<input [(ngModel)]="ZIP">
+
+
+<button (click)="requestLatLonAndLocation()">Lat Lon and Location</button>
+<br />
+Response: {{ response }}
+<div *ngIf="response">
+    <ul>
+        <li>
+            Closest location: {{ responseDescription }}
+        </li>
+        <li>
+            Distance from location: {{ responseDistance }}
+        </li>
+        <li>
+            Address: {{ responseAddress }}
+        </li>
+    </ul>
+    
+
+</div>
