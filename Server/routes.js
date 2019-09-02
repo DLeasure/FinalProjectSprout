@@ -26,24 +26,26 @@ routes.get("/latLon/:country/:postalCode", (req, res) => {
 });
 
 routes.get("/location/:latitude/:longitude", (req, res) => {
-    // let latLon = {
-    //     'latitude': "",
-    //     'longitude': ""
-    // };
     res.setHeader("Access-Control-Allow-Origin", "*");
-    // res.setHeader("Content-Type", "application/json");
     axios.get('https://api.earth911.com/earth911.searchLocations?api_key=eb3751a3e2f435e6&latitude=' + req.params.latitude + '&longitude=' + req.params.longitude)
         .then(response => {
-            // console.log("worked");
-            // latLon.latitude = response.data.result.latitude;
-            // latLon.longitude = response.data.result.longitude;
             res.status(200).send(response.data.result[0]);
         })
         .catch(error => {
             console.log(error);
         });
-    // res.status(200).send(latLon);
-    // res.end();
+});
+
+routes.get("/locationInfo/:locationId", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    axios.get('https://api.earth911.com/earth911.getLocationDetails?api_key=eb3751a3e2f435e6&location_id=' + req.params.locationId)
+        .then(response => {
+            locationId = req.params.locationId;
+            res.status(200).send(response.data.result);
+        })
+        .catch(error => {
+            console.log("error");
+        });
 });
 
 routes.get("/reduce", (req, res) => {
