@@ -15,7 +15,7 @@ export class RecycleComponent implements OnInit {
   longitude: number;
   locationId: string;
 
-  response: object;
+  response: any;
   responseDescription: string;
   responseDistance: number;
   responseAddress: string;
@@ -30,7 +30,7 @@ export class RecycleComponent implements OnInit {
   constructor(private earthService: EarthService) {};
 
   requestLatLonAndLocation() {
-    this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
+    this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe((resp: any) => {
       console.log(resp);
       this.latitude = resp.latitude;
       this.longitude = resp.longitude;
@@ -41,7 +41,7 @@ export class RecycleComponent implements OnInit {
   requestLocation() {
     // this.requestLatLon();
     console.log("first API request ran");
-    this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe(resp => {
+    this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe((resp: any) => {
       console.log("second API request ran");
       console.log(resp);
       this.responseDescription = resp.description;
@@ -54,7 +54,7 @@ export class RecycleComponent implements OnInit {
 
   requestLocationDetails() {
     // this.requestLatLon();
-    this.earthService.getLocationDetails(this.locationId).subscribe(resp => {
+    this.earthService.getLocationDetails(this.locationId).subscribe((resp: any) => {
       console.log("third API request ran");
       console.log(resp);
       // locationIdValue = this.locationId;
