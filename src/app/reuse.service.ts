@@ -13,4 +13,4 @@ export class ReuseService {
 
   getData(): Observable<any> {
     return this._http.get('https://www.reddit.com/r/Reuse/.json');
-}
+}};
