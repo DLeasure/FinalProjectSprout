@@ -15,3 +15,4 @@ export class ReuseService {
     return this._http.get('https://www.reddit.com/r/Reuse/.json');
 }
 };
+

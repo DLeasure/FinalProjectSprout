@@ -46,4 +46,31 @@ routes.get("/location/:latitude/:longitude", (req, res) => {
     // res.end();
 });
 
+//GET request for Reduce articles 
+routes.get("/reduce", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    axios.get('https://api.earth911.com/earth911.searchArticles?api_key=eb3751a3e2f435e6&query=reduce&sort=updated').then(response => {
+        res.status(200).send(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+});
+
+//GET article details from the Reduce articles
+routes.get("/reduce/details/:reduceURL", (req,res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    console.log(req.params.reduceURL);
+    axios.get('https://api.earth911.com/earth911.getArticleDetails?api_key=eb3751a3e2f435e6&url=' + req.params.reduceURL)
+    
+    //http://earth911.com/news/2012/10/03/5-signs-you-might-be-a-recycling-hoarder/')
+    .then(response => {
+
+        res.status(200).send(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+});
+
 module.exports = routes; 

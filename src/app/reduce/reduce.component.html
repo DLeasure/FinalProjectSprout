@@ -1,0 +1,9 @@
+<p>reduce works!</p>
+
+<button (click)="requestReduceArticles($event)">Show Reduce Articles</button>
+
+<div *ngFor="let article of allArticles">
+  <p> {{article.description}}</p>
+  <button value="{{article.url}}" (click)="requestArticleDetails($event)"><a href="{{ article.url }}"></a> Click Here
+    </button>
+</div>
