@@ -1,0 +1,8 @@
+#contentContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#articleContainer {
+  width: 30%;
+}
