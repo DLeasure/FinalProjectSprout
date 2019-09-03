@@ -28,6 +28,7 @@ export class EarthService {
 
   //function to get Reduce article details from Proxy Server
   getArticleDetails(reduceURL) {
-    return this.http.get("http;//localhost:3500/reduce/" + reduceURL)
+    let decodeURL = decodeURI(reduceURL);
+    return this.http.get("http://localhost:3500/reduce/details/" + decodeURL);
   }
 };
