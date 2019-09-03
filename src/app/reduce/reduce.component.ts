@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EarthService } from '../earth.service';
+import { stringify } from 'querystring';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reduce',
@@ -8,40 +10,32 @@ import { EarthService } from '../earth.service';
 })
 export class ReduceComponent implements OnInit {
 
-  allArticles : [];
-  articleDets : {};
+  allArticles : any;
+  articleDets : any;
   reduceURL : string = "";
   reduceDes : string;
-  reduceContent : any;
+  articleContent : string;
+  articleShown: boolean = false;
 
-  constructor(private earthService: EarthService) {
-      this.earthService.getReduceArticles().subscribe( res => {
-        this.allArticles = res['result'];
-        console.log(this.allArticles);
-      })
-   }
+  constructor(private earthService: EarthService, private router: Router) { }
 
-  
+  requestReduceArticles () {
+    this.earthService.getReduceArticles().subscribe( (res: any) => {
+      this.allArticles = res.result;
+    })
+  }
 
   requestArticleDetails (e) {
     this.reduceURL = encodeURIComponent(e.target.value);
-    console.log(this.reduceURL);
-    let decodeURL = decodeURIComponent(this.reduceURL);
-    console.log(decodeURL);
-    this.earthService.getArticleDetails(this.reduceURL).subscribe ( res => {
-      this.articleDets = res[`${decodeURL}`];
+    let test = decodeURIComponent(this.reduceURL);
+    this.earthService.getArticleDetails(this.reduceURL).subscribe ( (res: any) => {
+      this.articleDets = res[`${test}`];
+      this.articleContent = this.articleDets.content;
+      this.articleShown = true;
       this.reduceDes = this.articleDets.description;
-      this.reduceContent= this.articleDets.content;
-
-      //display reduceContent
-      let g = document.getElementById("articleContent");
-      let myDiv = document.createElement("div");
-      myDiv.innerHTML= this.reduceContent;
-      g.appendChild(myDiv);
-
-      console.log(this.reduceContent);
     });
   };
+
   ngOnInit() {
   }
 };

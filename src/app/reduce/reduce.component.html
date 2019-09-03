@@ -1,14 +1,19 @@
 <p>reduce works!</p>
 
-<div id="contentContainer">
-  <div id="articleContainer" *ngFor="let article of allArticles">
-    <h2> {{article.description}}</h2>
-    <button value="{{article.url}}" (click)="requestArticleDetails($event)">
-      <a href="{{ article.url }}"></a> Read More
+<button *ngIf="!articleShown" (click)="requestReduceArticles($event)">Show Reduce Articles</button>
+
+<div *ngIf="!articleShown">
+  <div *ngFor="let article of allArticles">
+    <p> {{article.description}}</p>
+    <button value="{{article.url}}" (click)="requestArticleDetails($event)"><a href="{{ article.url }}"></a> Click Here
     </button>
   </div>
+
+
 </div>
-<div>
-  <p>{{reduceDes}}</p>
-  <div id="articleContent"></div>
+<div *ngIf="articleShown">
+  <h1>{{articleDets.description}}</h1>
+  <div [innerHtml]="articleContent"></div>
+  <button (click)="articleShown = false">Go Back to articles</button>
+
 </div>

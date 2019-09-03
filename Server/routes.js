@@ -41,6 +41,7 @@ routes.get("/locationInfo/:locationId", (req, res) => {
     axios.get('https://api.earth911.com/earth911.getLocationDetails?api_key=eb3751a3e2f435e6&location_id=' + req.params.locationId)
         .then(response => {
             locationId = req.params.locationId;
+            console.log(response.data.result[locationId].materials);
             res.status(200).send(response.data.result);
         })
         .catch(error => {

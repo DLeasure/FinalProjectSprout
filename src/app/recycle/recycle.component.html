@@ -5,7 +5,7 @@
 
 <button (click)="requestLatLonAndLocation()">Lat Lon and Location</button>
 <br />
-Response: {{ response }}
+Response: 
 <div *ngIf="response">
     <ul>
         <li>
@@ -16,6 +16,13 @@ Response: {{ response }}
         </li>
         <li>
             Address: {{ responseAddress }}
+        </li>
+        <li>
+            Materials: <ul>
+                <li *ngFor="let material of response">
+                    {{material.description}}
+                </li>
+            </ul>
         </li>
     </ul>
     
