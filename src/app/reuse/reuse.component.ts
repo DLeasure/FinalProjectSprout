@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReuseService } from '../reuse.service';
+import { ReuseObject } from '../models/reuse.model';
 
 @Component({
   selector: 'app-reuse',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReuseComponent implements OnInit {
 
-  constructor() { }
+  reuseItems: ReuseObject[];
+
+  constructor(private reuseService: ReuseService) { }
 
   ngOnInit() {
+    this.reuseItems = [];
+    this.reuseService.getData().subscribe((res: any) => {
+      res.data.children.forEach(item => {
+        let url = item.data.url;
+        let image = item.data.thumbnail;
+        let title = item.data.title;
+        let reuseObject: ReuseObject = {
+          title: title,
+          url: url,
+          image: image
+        }
+        this.reuseItems.push(reuseObject);
+      })
+    })
   }
 
 }

@@ -1,1 +1,7 @@
-<p>reuse works!</p>
+<ul>
+    <li *ngFor="let item of reuseItems">
+        {{item.title}}
+        <img [src]="item.image" />
+        <a [href]="item.url">link</a>
+    </li>
+</ul>

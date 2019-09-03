@@ -15,7 +15,6 @@ export class SproutHomeComponent implements OnInit {
 
   optionClicked() {
     document.getElementById('menuButton').click();
-    console.log('clicked')
   }
 
 }
