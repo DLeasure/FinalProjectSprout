@@ -39,28 +39,25 @@ export class RecycleComponent implements OnInit {
   };
 
   requestLocation() {
-    // this.requestLatLon();
-    console.log("first API request ran");
     this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe((resp: any) => {
-      console.log("second API request ran");
-      console.log(resp);
       this.responseDescription = resp.description;
       this.responseDistance = resp.distance;
       this.locationId = resp.location_id;
-      // console.log(this.locationId);
       this.requestLocationDetails();
     });
   };
 
   requestLocationDetails() {
-    // this.requestLatLon();
     this.earthService.getLocationDetails(this.locationId).subscribe((resp: any) => {
-      console.log("third API request ran");
-      console.log(resp);
+      // getting key/value pair from Json object with name and variable
+      let key;
+      for (var k in resp) {
+        key = k;
+      };
       // locationIdValue = this.locationId;
-      this.response = resp.valueOf(this.locationId);
-      this.responseAddress = this.response.Q1RQNVVfXVxHUQ.address;
-      console.log(this.responseAddress);
+      console.log(resp)
+      this.response = resp[k].materials;
+      this.responseAddress = resp[k].address;
       // this.responseDescription = resp.description;
       // this.responseDistance = resp.distance;
     });
