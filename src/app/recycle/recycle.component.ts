@@ -48,7 +48,6 @@ export class RecycleComponent implements OnInit {
       this.responseDescription = resp.description;
       this.responseDistance = resp.distance;
       this.locationId = resp.location_id;
-      // console.log(this.locationId);
       this.requestLocationDetails();
     });
   };

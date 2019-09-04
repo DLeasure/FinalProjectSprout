@@ -1,0 +1,15 @@
+<h1 class="reuseTitle">Reuse</h1>
+<ul>
+    <li *ngFor="let item of reuseItems">
+            <div class="box">
+        <div class="words">
+        {{item.title}}
+        </div>
+        <div></div>
+        <img [src]="item.image" class="image"/>
+        <div></div>
+        <a [href]="item.url" class="link">Click here the read more</a>
+    </div>
+    </li>
+</ul>
+

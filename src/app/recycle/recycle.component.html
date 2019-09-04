@@ -1,11 +1,10 @@
 <p>recycle works!</p>
 
-<input [(ngModel)]="ZIP">
+<input [(ngModel)]="ZIP" placeholder="enter zip code">
 
 
-<button (click)="requestLatLonAndLocation()">Lat Lon and Location</button>
+<button (click)="requestLatLonAndLocation()">Recycle</button>
 <br />
-
 <div *ngIf="response">
     <ul>
         <li>
@@ -22,6 +21,13 @@
         </li>
         <li>
             Hours of operation: {{ responseHours }}
+        </li>
+        <li>
+            Materials: <ul>
+                <li *ngFor="let material of response">
+                    {{material.description}}
+                </li>
+            </ul>
         </li>
     </ul>
     

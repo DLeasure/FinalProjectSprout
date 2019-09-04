@@ -3,6 +3,9 @@ const routes = express.Router();
 // const https = require('https');
 const axios = require('axios');
 
+let recylceLength = 0;
+let recycleIndex = 0;
+
 // routes.use(books);
 
 routes.get("/latLon/:country/:postalCode", (req, res) => {
@@ -29,7 +32,12 @@ routes.get("/location/:latitude/:longitude", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     axios.get('https://api.earth911.com/earth911.searchLocations?api_key=eb3751a3e2f435e6&latitude=' + req.params.latitude + '&longitude=' + req.params.longitude)
         .then(response => {
-            res.status(200).send(response.data.result[0]);
+            recylceLength = response.data.result.length;
+            if (recycleIndex >= recylceLength) {
+                recycleIndex = 0;
+            }
+            res.status(200).send(response.data.result[recycleIndex]);
+            recycleIndex++;
         })
         .catch(error => {
             console.log(error);
@@ -60,15 +68,16 @@ routes.get("/reduce", (req, res) => {
 });
 
 //GET article details from the Reduce articles
-routes.get("/reduce/details/:reduceURL", (req,res) => {
+routes.get("/reduce/details/:decodeURL", (req,res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    console.log(req.params.reduceURL);
-    axios.get('https://api.earth911.com/earth911.getArticleDetails?api_key=eb3751a3e2f435e6&url=' + req.params.reduceURL)
+    URL2 = encodeURIComponent(req.params.decodeURL);
+    console.log(URL2);
+    axios.get('https://api.earth911.com/earth911.getArticleDetails?api_key=eb3751a3e2f435e6&url=' + URL2)
     
     //http://earth911.com/news/2012/10/03/5-signs-you-might-be-a-recycling-hoarder/')
     .then(response => {
 
-        res.status(200).send(response.data);
+        res.status(200).send(response.data.result);
     })
     .catch(error => {
         console.log(error);
