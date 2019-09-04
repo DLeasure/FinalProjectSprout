@@ -15,7 +15,8 @@ export class RecycleComponent implements OnInit {
   longitude: number;
   locationId: string;
 
-  response: any;
+  response: object;
+  responseArray: Array<object>;
   responseDescription: string;
   responseDistance: number;
   responseAddress: string;
@@ -30,8 +31,8 @@ export class RecycleComponent implements OnInit {
   constructor(private earthService: EarthService) {};
 
   requestLatLonAndLocation() {
-    this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe((resp: any) => {
-      console.log(resp);
+    this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
+      // console.log(resp);
       this.latitude = resp.latitude;
       this.longitude = resp.longitude;
       this.requestLocation();
@@ -39,7 +40,11 @@ export class RecycleComponent implements OnInit {
   };
 
   requestLocation() {
-    this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe((resp: any) => {
+    // this.requestLatLon();
+    // console.log("first API request ran");
+    this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe(resp => {
+      // console.log("second API request ran");
+      // console.log(resp);
       this.responseDescription = resp.description;
       this.responseDistance = resp.distance;
       this.locationId = resp.location_id;
@@ -48,19 +53,27 @@ export class RecycleComponent implements OnInit {
   };
 
   requestLocationDetails() {
-    this.earthService.getLocationDetails(this.locationId).subscribe((resp: any) => {
-      // getting key/value pair from Json object with name and variable
-      let key;
-      for (var k in resp) {
-        key = k;
-      };
+    // this.requestLatLon();
+    this.earthService.getLocationDetails(this.locationId).subscribe(resp => {
+      // console.log("third API request ran");
+      // console.log(resp);
       // locationIdValue = this.locationId;
-      console.log(resp)
-      this.response = resp[k].materials;
-      this.responseAddress = resp[k].address;
+      this.response = resp.valueOf(this.locationId);
+      this.responseArray = Object.keys(this.response).map(i => this.response[i]);
+      // console.log(this.responseArray);
+      this.responseAddress = this.responseArray[0].address;
+      this.responseDescription = this.responseArray[0].description;
+      this.responseDistance = this.responseArray[0].distance;
+      this.responseCity = this.responseArray[0].city;
+      this.responseZip = this.responseArray[0].postal_code;
+      this.responseState = this.responseArray[0].province;
+      this.responsePhone = this.responseArray[0].phone;
+      this.responseCountry = this.responseArray[0].country;
+      this.responseHours = this.responseArray[0].hours;
+      // console.log(this.responseAddress);
       // this.responseDescription = resp.description;
       // this.responseDistance = resp.distance;
-    });
+    }); 
   };
   
 

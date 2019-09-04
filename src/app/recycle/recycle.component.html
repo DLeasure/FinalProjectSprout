@@ -5,7 +5,6 @@
 
 <button (click)="requestLatLonAndLocation()">Recycle</button>
 <br />
-Response: 
 <div *ngIf="response">
     <ul>
         <li>
@@ -15,7 +14,13 @@ Response:
             Distance from location: {{ responseDistance }}
         </li>
         <li>
-            Address: {{ responseAddress }}
+            Address: {{ responseAddress }}, {{ responseCity }}, {{ responseState }} {{ responseZip }}, {{ responseCountry }}
+        </li>
+        <li>
+            Phone: {{ responsePhone }}
+        </li>
+        <li>
+            Hours of operation: {{ responseHours }}
         </li>
         <li>
             Materials: <ul>
