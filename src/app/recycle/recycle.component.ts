@@ -63,7 +63,7 @@ export class RecycleComponent implements OnInit {
       // console.log(this.responseArray);
       this.responseAddress = this.responseArray[0].address;
       this.responseDescription = this.responseArray[0].description;
-      this.responseDistance = this.responseArray[0].distance;
+      // this.responseDistance = this.responseArray[0].distance;
       this.responseCity = this.responseArray[0].city;
       this.responseZip = this.responseArray[0].postal_code;
       this.responseState = this.responseArray[0].province;
