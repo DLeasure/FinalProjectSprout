@@ -43,8 +43,8 @@ export class RecycleComponent implements OnInit {
     // this.requestLatLon();
     // console.log("first API request ran");
     this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe(resp => {
-      // console.log("second API request ran");
-      // console.log(resp);
+      console.log("second API request ran");
+      console.log(resp);
       this.responseDescription = resp.description;
       this.responseDistance = resp.distance;
       this.locationId = resp.location_id;
@@ -55,7 +55,7 @@ export class RecycleComponent implements OnInit {
   requestLocationDetails() {
     // this.requestLatLon();
     this.earthService.getLocationDetails(this.locationId).subscribe(resp => {
-      // console.log("third API request ran");
+      console.log("third API request ran");
       // console.log(resp);
       // locationIdValue = this.locationId;
       this.response = resp.valueOf(this.locationId);

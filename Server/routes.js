@@ -3,8 +3,8 @@ const routes = express.Router();
 // const https = require('https');
 const axios = require('axios');
 
-let recylceLength = 0;
-let recycleIndex = 0;
+// let recylceLength = 0;
+// let recycleIndex = 0;
 
 // routes.use(books);
 
@@ -30,13 +30,13 @@ routes.get("/latLon/:country/:postalCode", (req, res) => {
 
 routes.get("/location/:latitude/:longitude", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    axios.get('https://api.earth911.com/earth911.searchLocations?api_key=eb3751a3e2f435e6&latitude=' + req.params.latitude + '&longitude=' + req.params.longitude)
+    axios.get('https://api.earth911.com/earth911.searchLocations?api_key=eb3751a3e2f435e6&max_distance=25&latitude=' + req.params.latitude + '&longitude=' + req.params.longitude)
         .then(response => {
-            recylceLength = response.data.result.length;
-            if (recycleIndex >= recylceLength) {
-                recycleIndex = 0;
-            }
-            res.status(200).send(response.data.result[recycleIndex]);
+            // recycleLength = response.data.result.length;
+            // if (recycleIndex >= recycleLength) {
+            //     recycleIndex = 0;
+            // }
+            res.status(200).send(response.data.result);
             recycleIndex++;
         })
         .catch(error => {
