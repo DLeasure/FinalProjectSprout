@@ -56,10 +56,10 @@ routes.get("/locationInfo/:locationId", (req, res) => {
         });
 });
 
-//GET request for Reduce articles 
+//GET request for 15 Reduce articles 
 routes.get("/reduce", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    axios.get('https://api.earth911.com/earth911.searchArticles?api_key=eb3751a3e2f435e6&query=reduce&sort=updated').then(response => {
+    axios.get('https://api.earth911.com/earth911.searchArticles?api_key=eb3751a3e2f435e6&max_results=15&query=reduce&sort=updated').then(response => {
         res.status(200).send(response.data);
     })
     .catch(error => {

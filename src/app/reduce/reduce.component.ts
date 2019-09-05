@@ -16,10 +16,9 @@ export class ReduceComponent implements OnInit {
   reduceDes : string;
   articleContent : string;
   articleShown: boolean = false;
+  cleanArticleContent : string;
 
-  constructor(private earthService: EarthService, private router: Router) { }
-
-  requestReduceArticles () {
+  constructor(private earthService: EarthService, private router: Router) { 
     this.earthService.getReduceArticles().subscribe( (res: any) => {
       this.allArticles = res.result;
     })
@@ -27,10 +26,14 @@ export class ReduceComponent implements OnInit {
 
   requestArticleDetails (e) {
     this.reduceURL = encodeURIComponent(e.target.value);
-    let test = decodeURIComponent(this.reduceURL);
+    let decodeURL = decodeURIComponent(this.reduceURL);
     this.earthService.getArticleDetails(this.reduceURL).subscribe ( (res: any) => {
-      this.articleDets = res[`${test}`];
+      this.articleDets = res[`${decodeURL}`];
       this.articleContent = this.articleDets.content;
+
+      const regex = /(\[caption[^>]*].*?\[\/caption])/gm;
+      this.cleanArticleContent = this.articleContent.replace(regex, "");
+
       this.articleShown = true;
       this.reduceDes = this.articleDets.description;
     });
