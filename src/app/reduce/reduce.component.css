@@ -6,3 +6,7 @@
 #articleContainer {
   width: 30%;
 }
+
+div > img {
+  display: none;
+}

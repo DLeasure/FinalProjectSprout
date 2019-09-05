@@ -1,9 +1,9 @@
-<p>reduce works!</p>
+<p>How to reduce waste</p>
 
-<button *ngIf="!articleShown" (click)="requestReduceArticles($event)">Show Reduce Articles</button>
+<!-- <button *ngIf="!articleShown" (click)="requestReduceArticles($event)">Show Reduce Articles</button> -->
 
-<div *ngIf="!articleShown">
-  <div *ngFor="let article of allArticles">
+<div *ngIf="!articleShown" id="contentContainer">
+  <div *ngFor="let article of allArticles" id="articleContainer">
     <p> {{article.description}}</p>
     <button value="{{article.url}}" (click)="requestArticleDetails($event)"><a href="{{ article.url }}"></a> Click Here
     </button>
@@ -13,7 +13,7 @@
 </div>
 <div *ngIf="articleShown">
   <h1>{{articleDets.description}}</h1>
-  <div [innerHtml]="articleContent"></div>
+  <div [innerHtml]="cleanArticleContent"></div>
   <button (click)="articleShown = false">Go Back to articles</button>
 
 </div>
