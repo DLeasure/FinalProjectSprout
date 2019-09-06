@@ -19,14 +19,16 @@ export class EarthService {
 
   getLocationDetails(locationId) {
     // return this.http.get("http://localhost:3500/locationInfo/" + locationId);
+    console.log(locationId);
     const locationObject = this.http.get("http://localhost:3500/locationInfo/" + locationId);
-    // return locationObject;
+    return locationObject;
     // console.log("locationObject = " + locationObject);
-    const objectKeys = Object.keys(locationObject);
-    console.log(objectKeys);
-    const responseArray = Object.keys(locationObject).map(i => locationObject[i]);
-    console.log(responseArray);
-    return responseArray;
+    // const objectKeys = Object.keys(locationObject);
+    // console.log("objectKeys");
+    // console.log(objectKeys);
+    // const responseArray = Object.values(locationObject);
+    // console.log(responseArray);
+    // return responseArray;
     // let responseArray = Object.values(locationObject);
     // console.log("responseArray = " + responseArray);
     // return responseArray[0];

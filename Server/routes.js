@@ -48,8 +48,11 @@ routes.get("/locationInfo/:locationId", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     axios.get('https://api.earth911.com/earth911.getLocationDetails?api_key=eb3751a3e2f435e6&location_id=' + req.params.locationId)
         .then(response => {
-            locationId = req.params.locationId;
-            res.status(200).send(response.data.result);
+            // locationId = req.params.locationId;
+            // console.log(response.data.result);
+            const responseArray = Object.values(response.data.result);
+            console.log(responseArray);
+            res.status(200).send(responseArray);
         })
         .catch(error => {
             console.log("error");
