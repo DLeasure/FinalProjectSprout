@@ -51,7 +51,7 @@ routes.get("/locationInfo/:locationId", (req, res) => {
             // locationId = req.params.locationId;
             // console.log(response.data.result);
             const responseArray = Object.values(response.data.result);
-            console.log(responseArray);
+            // console.log(responseArray);
             res.status(200).send(responseArray);
         })
         .catch(error => {
