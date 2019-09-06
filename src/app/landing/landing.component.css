@@ -1,4 +1,28 @@
-canvas {
-    border: #00aa33 1px solid;
-    margin: 0;
-  }
+.rotate {
+    -ms-transform: rotate(120deg);
+     -webkit-transform: rotate(120deg);
+      transform: rotate(120deg);
+   width:350px;
+   height: 350px;
+ }
+ 
+ .rotate1 {
+    -ms-transform: rotate(240deg);
+     -webkit-transform: rotate(240deg);
+      transform: rotate(240deg);
+   width:350px;
+   height: 350px;
+ }
+ 
+ .normal {
+    -ms-transform: rotate(0deg);
+     -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+   width: 350px;
+   height: 350px;
+ }
+
+ #image {
+     width: 350px;
+     height: 350px;
+ }

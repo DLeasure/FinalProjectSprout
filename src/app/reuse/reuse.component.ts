@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReuseService } from '../reuse.service';
 import { ReuseObject } from '../models/reuse.model';
+import { InteractiveFlowers } from '../animations/interactive-flowers'
 
 @Component({
   selector: 'app-reuse',
