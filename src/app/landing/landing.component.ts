@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InteractiveFlowers } from '../animations/interactive-flowers'
+
 
 
 @Component({
@@ -12,16 +12,20 @@ import { InteractiveFlowers } from '../animations/interactive-flowers'
 export class LandingComponent implements OnInit {
 
   constructor() { }
-  
-  ngOnInit() {
-    const canvas = <HTMLCanvasElement>document.getElementById('flower');
-const flowers = new InteractiveFlowers(canvas);
+  Rotate() {
+    var element = document.getElementById('image');
 
-const btn = document.getElementById('clearBtn');
-btn.addEventListener('click', () => {
-  flowers.clearCanvas();
-});
-
+    if (element.className === "normal") {
+      element.className = "rotate";
+    }
+    else if ( element.className === "rotate") {
+      element.className = 'rotate1';
+    } else if ( element.className === "rotate1") {
+      element.className = 'normal';
+    }
   }
+  ngOnInit() {
+       }
+    
 
 }
