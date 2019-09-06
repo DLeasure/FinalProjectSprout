@@ -37,7 +37,7 @@ routes.get("/location/:latitude/:longitude", (req, res) => {
             //     recycleIndex = 0;
             // }
             res.status(200).send(response.data.result);
-            recycleIndex++;
+            // recycleIndex++;
         })
         .catch(error => {
             console.log(error);

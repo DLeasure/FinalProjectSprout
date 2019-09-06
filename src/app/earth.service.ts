@@ -15,16 +15,27 @@ export class EarthService {
 
   getLocationFromLatLon(latitude, longitude) {
     return this.http.get("http://localhost:3500/location/" + latitude + "/" + longitude);
-  }
+  };
 
   getLocationDetails(locationId) {
-    return this.http.get("http://localhost:3500/locationInfo/" + locationId);
-  }
+    // return this.http.get("http://localhost:3500/locationInfo/" + locationId);
+    const locationObject = this.http.get("http://localhost:3500/locationInfo/" + locationId);
+    // return locationObject;
+    // console.log("locationObject = " + locationObject);
+    const objectKeys = Object.keys(locationObject);
+    console.log(objectKeys);
+    const responseArray = Object.keys(locationObject).map(i => locationObject[i]);
+    console.log(responseArray);
+    return responseArray;
+    // let responseArray = Object.values(locationObject);
+    // console.log("responseArray = " + responseArray);
+    // return responseArray[0];
+  };
 
   //function to get Reduce articles from Proxy Server
   getReduceArticles() {
     return this.http.get("http://localhost:3500/reduce/");
-  }
+  };
 
   //function to get Reduce article details from Proxy Server
   getArticleDetails(reduceURL) {
