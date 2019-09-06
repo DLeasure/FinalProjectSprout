@@ -1,19 +1,21 @@
-<p>How to reduce waste</p>
+<h1>How to Reduce Waste</h1>
 
 <!-- <button *ngIf="!articleShown" (click)="requestReduceArticles($event)">Show Reduce Articles</button> -->
 
 <div *ngIf="!articleShown" id="contentContainer">
   <div *ngFor="let article of allArticles" id="articleContainer">
-    <p> {{article.description}}</p>
-    <button value="{{article.url}}" (click)="requestArticleDetails($event)"><a href="{{ article.url }}"></a> Click Here
+    <a href="http://clipartmag.com/cartoon-flower-pictures" title="Cartoon Flower Pictures"><img src="http://clipartmag.com/images/cartoon-flower-pictures-17.jpg" id="flowerImg"/></a>
+    <p id="articleDes">{{article.description}}</p>
+    <button value="{{article.url}}" (click)="requestArticleDetails($event)" id="readButton"><a href="{{ article.url }}"></a> View
     </button>
   </div>
 
 
 </div>
 <div *ngIf="articleShown">
-  <h1>{{articleDets.description}}</h1>
+  <button (click)="articleShown = false" class="backButton">Back to Articles</button>
+  <h2>{{articleDets.description}}</h2>
   <div [innerHtml]="cleanArticleContent"></div>
-  <button (click)="articleShown = false">Go Back to articles</button>
+  <button (click)="articleShown = false" class="backButton">Back to Articles</button>
 
 </div>

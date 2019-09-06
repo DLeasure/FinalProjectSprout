@@ -1,12 +1,74 @@
 #contentContainer {
-  display: flex;
-  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
 }
 
 #articleContainer {
-  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  /* box-sizing: border-box; */
+  border: solid;
+  border-width: 2px;
+  margin-bottom: 20px;
+  padding: 5px;
+  vertical-align: middle;
 }
 
-div > img {
+#articleDes {
+  text-align: center;
+  width: 100%;
+}
+
+#readButton {
+  width: 100%;
+  padding: 5px;
+  color: white;
+  background-color: #303a2c;
+}
+
+.backButton {
+  color: white;
+  background-color: #303a2c;
+}
+
+#flowerImg {
   display: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+  #contentContainer{
+    width: 80%;
+  }
+/* 
+  #articleContainer {
+    /* height: 75px; */
+  /* } */
+
+  /* #articleDes {
+    display: flex;
+    width: 75%;
+    /* margin-left: 15px; */
+  /* }  
+
+  #flowerImg{
+    display: flex;
+    width: 20%;
+    margin-right: 0;
+    /* vertical-align: middle; */
+  /* }
+  #readButton {
+    width: 100%;
+    /* display: block; */
+    /* border-radius: 100%; */
+    /* padding: 10px; */
+    /* position: relative; */
+    /* top: -7px; */
+    /* color: white; */
+    /* margin-left: 45%;
+    background-color: #303a2c; */
+  /* }   */
 }
