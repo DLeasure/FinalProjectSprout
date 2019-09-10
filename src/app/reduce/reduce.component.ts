@@ -21,7 +21,7 @@ export class ReduceComponent implements OnInit {
   constructor(private earthService: EarthService, private router: Router) { 
     this.earthService.getReduceArticles().subscribe( (res: any) => {
       this.allArticles = res.result;
-    })
+    });
   }
 
   requestArticleDetails (e) {
@@ -39,6 +39,11 @@ export class ReduceComponent implements OnInit {
     });
   };
 
+  scrollToTop () {
+    window.scroll(0,0)
+  }
+
   ngOnInit() {
+    
   }
 };
