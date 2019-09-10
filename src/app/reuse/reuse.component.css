@@ -1,49 +1,91 @@
-.box {
+#contentContainer{
+    background-color: #e6eae1;
+    margin: auto;
+    width: 90%;
+}
+
+.articleContainer {
+    margin: 0px 10px 20px 10px;
     display: flex;
-    width: 80%;
-    height: auto;
-    flex-direction: column;
-    border: 1px solid black;
-    justify-content: space-around;
-    padding: 5%;
-    margin: 2%;
-    background-color: whitesmoke;
-    margin-right: 5%;
+    flex-wrap: wrap;
+    border: 1px solid;
     border-radius: 10px;
-    text-decoration-style: none;
+    padding: 5%;
+    background-color: whitesmoke;
 }
 
-.image {
-    display: block;
-    width: 70%;
-    height: auto;
-    margin-left: 15%;
+.reuseImage {
+    display: none;
 }
 
-.image img {
+.reuseImage img {
     width: 100%;
     height: auto;
     margin-bottom: 4%;
 }
 
-.words {
+.reuseArticle {
     color: black;
-    font-size: 18px;
-    margin-bottom: 4%;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    padding: 2%;
-    text-decoration-style: none;
+    width: 100%;
 }
 
-.link {
-    color: darkblue;
-    font-size: 20px;
-    margin-top: 4%;
-    margin-left: 25%;
+.reuseLink {
+    width: 100%;
+    padding: 5px;
+    color: white;
+    background-color: #50833c;
 }
 
 .reuseTitle {
+    margin-top: 10px;
     font-size: 40px;
-    margin-left: 34.5%;
+    text-align: center;
+}
+
+@media only screen and (min-width:480px) {
+    #contentContainer{
+        width:80%;
+    }
+
+    .reuseArticle{
+        font-size: 20px;
+        width: 70%;
+        margin-left: 15px;
+        text-align: left;
+        margin: auto;
+    }
+
+    .reuseImage{
+        display: flex;
+        width: 100px;
+    }
+
+    .reuseLink{
+        margin: 10px 0px 10px 0px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .reuseTitle{
+        font-size: 40px;
+    }
+
+    .articleContainer{
+        padding: 15px;
+    }
+
+    .reuseArticle{
+        font-size: 25px;
+    }
+
+    .reuseLink{
+        position: relative;
+        top: 30px;
+        margin-top: 0px;
+        margin: auto;
+        width: 20%;
+        border-radius: 100%;
+        padding: 5px;
+    }
 }

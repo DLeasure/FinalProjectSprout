@@ -1,15 +1,11 @@
-<h1 class="reuseTitle">Reuse</h1>
-<ul>
-    <li *ngFor="let item of reuseItems">
-            <div class="box">
-        <div class="words">
-        {{item.title}}
-        </div>
-        <div></div>
-        <img [src]="item.image" class="image"/>
-        <div></div>
-        <a [href]="item.url" class="link">Click here the read more</a>
+<div id="contentContainer">
+    <h1 class="reuseTitle">Reuse</h1>
+    <div *ngFor="let item of reuseItems" class="articleContainer">
+        <img src="https://www.recycling.com/wp-content/uploads/2017/07/reuse-reusing-step-symbol-logo-blue.png" class="reuseImage"/>
+        <p class="reuseArticle">
+            {{item.title}}
+        </p>
+        <button class="reuseLink"><a [href]="item.url"></a>View Article</button>
     </div>
-    </li>
-</ul>
+</div>
 

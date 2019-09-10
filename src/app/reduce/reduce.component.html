@@ -1,11 +1,7 @@
-
-
-<!-- <button *ngIf="!articleShown" (click)="requestReduceArticles($event)">Show Reduce Articles</button> -->
-
 <div *ngIf="!articleShown" id="contentContainer">
   <h1>How to Reduce Waste</h1>
   <div *ngFor="let article of allArticles" id="articleContainer">
-    <img src="http://clipartmag.com/images/cartoon-flower-pictures-17.jpg" id="flowerImg"/>
+    <img src="https://www.recycling.com/wp-content/uploads/2017/07/reduce-reducing-step-symbol-logo-red.png" id="flowerImg"/>
     <p id="articleDes">{{article.description}}</p>
     <button value="{{article.url}}" (click)="requestArticleDetails($event)" id="readButton" (click)="scrollToTop()"><a href="{{ article.url }}"></a> View
     </button>
