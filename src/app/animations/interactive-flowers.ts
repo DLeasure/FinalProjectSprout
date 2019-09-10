@@ -1,7 +1,7 @@
 import { Flower } from '../models/flower';
 import { Point } from '../models/point';
 import { FlowerRandomizationService } from '../flower-randomization.service';
-
+``
 export class InteractiveFlowers {
   private readonly context: CanvasRenderingContext2D;
   private readonly canvasWidth: number;

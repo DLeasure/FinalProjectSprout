@@ -8,6 +8,7 @@ import { forkJoin, Observable } from 'rxjs';
   templateUrl: './recycle.component.html',
   styleUrls: ['./recycle.component.css']
 })
+
 export class RecycleComponent implements OnInit {
 
   country: string = "US";
@@ -32,13 +33,12 @@ export class RecycleComponent implements OnInit {
   // responseCountry: string;
   // responseHours: string;
   // locationIdValue: string;
-
   
 
   requestLatLonAndLocation() {
     this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
-      this.latitude = resp.latitude;
-      this.longitude = resp.longitude;
+      //this.latitude = resp.latitude;
+      //this.longitude = resp.longitude;
       this.requestLocation();
     });
   };
@@ -89,4 +89,4 @@ export class RecycleComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+} 

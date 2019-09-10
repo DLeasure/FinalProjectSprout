@@ -30,6 +30,7 @@ a:hover {
   width: 100%;
   background-color: #8dbc74;
   top: 0;
+  z-index: 10;
 }
 
 #aboutButton {
