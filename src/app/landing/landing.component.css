@@ -27,6 +27,7 @@
  }
 
  #image {
+
     transition: 1s;
      width: 350px;
      height: 350px;
@@ -35,10 +36,11 @@
      margin-left: 0%;
  }
 
+
 .spins {
-   margin-left: 5%;
-   margin-top: 30%;
-   z-index: 1;
+   margin-left: 25%;
+   margin-top: 5%;
+   z-index: -1;
 }
 
 .treee {
@@ -48,6 +50,7 @@
    z-index: 2;
    margin-left: 16%;
    margin-top: -90px;
+
 }
 
 .Pic {
@@ -87,4 +90,5 @@
    z-index: -5;
    bottom: 20%;
    margin-left: 25%;
-}>>>>>>> tree on home / rotation better
+}
+
