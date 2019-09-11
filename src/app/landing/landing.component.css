@@ -27,6 +27,7 @@
  }
 
  #image {
+    transition: 1s;
      width: 350px;
      height: 350px;
      z-index: 1;
