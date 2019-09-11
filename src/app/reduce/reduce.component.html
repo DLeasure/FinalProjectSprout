@@ -1,9 +1,9 @@
 <div *ngIf="!articleShown" id="contentContainer">
-  <h1>How to Reduce Waste</h1>
+  <h1>Reducing Waste</h1>
   <div *ngFor="let article of allArticles" id="articleContainer">
-    <img src="https://www.recycling.com/wp-content/uploads/2017/07/reduce-reducing-step-symbol-logo-red.png" id="flowerImg"/>
+    <img src="https://www.recycling.com/wp-content/uploads/2017/07/reduce-reducing-step-symbol-logo-red.png" id="reduceImg"/>
     <p id="articleDes">{{article.description}}</p>
-    <button value="{{article.url}}" (click)="requestArticleDetails($event)" id="readButton" (click)="scrollToTop()"><a href="{{ article.url }}"></a> View
+    <button value="{{article.url}}" (click)="requestArticleDetails($event)" id="readButton" (click)="scrollToTop()"><a href="{{ article.url }}"></a> Read Article
     </button>
   </div>
 
