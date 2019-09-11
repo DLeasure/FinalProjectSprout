@@ -27,7 +27,6 @@
  }
 
  #image {
-
     transition: 1s;
      width: 350px;
      height: 350px;
@@ -38,8 +37,8 @@
 
 
 .spins {
-   margin-left: 25%;
-   margin-top: 5%;
+   margin-left: 7%;
+   margin-top: 20%;
    z-index: -1;
 }
 
@@ -48,9 +47,8 @@
    width: 250px;
    height: 300px;
    z-index: 2;
-   margin-left: 16%;
+   margin-left: 19%;
    margin-top: -90px;
-
 }
 
 .Pic {
@@ -64,9 +62,9 @@
    background-color: green;
    border-radius: 10px;
    width: 50%;
-   height: 30px;
+   height: 50px;
    z-index: -3;
-   bottom: 20%;
+   bottom: 30%;
    margin-left: 25%;
 }
 
@@ -75,9 +73,9 @@
    background-color: green;
    border-radius: 10px;
    width: 50%;
-   height: 30px;
+   height: 50px;
    z-index: -4;
-   bottom: 20%;
+   bottom: 30%;
    margin-left: 25%;
 }
 
@@ -86,9 +84,9 @@
    background-color: green;
    border-radius: 10px;
    width: 50%;
-   height: 30px;
+   height: 50px;
    z-index: -5;
-   bottom: 20%;
+   bottom: 30%;
    margin-left: 25%;
 }
 
