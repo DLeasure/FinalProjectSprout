@@ -11,6 +11,7 @@ import { ReuseComponent } from './reuse/reuse.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LandingComponent } from './landing/landing.component';
+import { QuizComponent } from './quiz/quiz.component';
 // import { EarthService } from './earth.service'
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LandingComponent } from './landing/landing.component';
     ReuseComponent,
     RecycleComponent,
     AboutUsComponent,
-    LandingComponent
+    LandingComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

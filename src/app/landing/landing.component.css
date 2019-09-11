@@ -4,6 +4,7 @@
       transform: rotate(120deg);
    width:350px;
    height: 350px;
+   z-index: 1;
  }
  
  .rotate1 {
@@ -13,6 +14,7 @@
    width:350px;
    height: 350px;
    padding-left: - 10px;
+   z-index: 1;
  }
  
  .normal {
@@ -21,34 +23,67 @@
       transform: rotate(0deg);
    width: 350px;
    height: 350px;
+   z-index: 1;
  }
 
  #image {
-     width: 550px;
-     height: 550px;
-     z-index: -1;
+     width: 350px;
+     height: 350px;
+     z-index: 1;
      position: absolute;
-     margin-left: 80px;
+     margin-left: 0%;
  }
 
 .spins {
-   margin-left: 25%;
-   margin-top: 5%;
-   z-index: -1;
+   margin-left: 5%;
+   margin-top: 30%;
+   z-index: 1;
 }
 
 .treee {
    position: absolute;
-   width: 450px;
-   height: 500px;
-   z-index: 1;
-   margin-left: 580px;
-   margin-top: -60px;
+   width: 250px;
+   height: 300px;
+   z-index: 2;
+   margin-left: 16%;
+   margin-top: -90px;
 }
 
 .Pic {
    position: absolute;
-   z-index: -2;
+   z-index: 2;
    width: 100%;
 }
->>>>>>> tree on home / rotation better
+
+#reduce {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 50%;
+   height: 30px;
+   z-index: -3;
+   bottom: 20%;
+   margin-left: 25%;
+}
+
+#reuse {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 50%;
+   height: 30px;
+   z-index: -4;
+   bottom: 20%;
+   margin-left: 25%;
+}
+
+#recycle {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 50%;
+   height: 30px;
+   z-index: -5;
+   bottom: 20%;
+   margin-left: 25%;
+}>>>>>>> tree on home / rotation better
