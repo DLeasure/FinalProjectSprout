@@ -33,6 +33,10 @@ const routes: Routes = [
     {
         path: 'quiz',
         component: QuizComponent
+    },
+    {
+        path: '',
+        component: LandingComponent
     }
 ];
 @NgModule({

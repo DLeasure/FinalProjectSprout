@@ -65,7 +65,7 @@
    height: 50px;
    z-index: -3;
    bottom: 20%;
-   margin-left: 38%;
+   margin-left: 36%;
 }
 
 #reuse {
@@ -76,7 +76,7 @@
    height: 50px;
    z-index: -4;
    bottom: 20%;
-   margin-left: 38%;
+   margin-left: 36%;
 }
 
 #recycle {
@@ -87,7 +87,7 @@
    height: 50px;
    z-index: -5;
    bottom: 20%;
-   margin-left: 38%;
+   margin-left: 36%;
 }
 
 .left {
@@ -114,5 +114,38 @@
    margin-left: 95%;
    border-radius: 80px;
    font-size: 50px;
+}
+
+#reduce1 {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 60%;
+   height: 60px;
+   z-index: -3;
+   bottom: 1%;
+   margin-left: 32%;
+}
+
+#reuse1 {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 60%;
+   height: 60px;
+   z-index: -4;
+   bottom: 1%;
+   margin-left: 32%;
+}
+
+#recycle1 {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 60%;
+   height: 60px;
+   z-index: -5;
+   bottom: 1%;
+   margin-left: 32%;
 }
 
