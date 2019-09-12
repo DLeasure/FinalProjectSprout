@@ -71,16 +71,16 @@ export class RecycleComponent implements OnInit {
 
   constructor(private earthService: EarthService) {};
   
-  // responseDescription: string;
-  // responseDistance: number;
-  // responseAddress: string;
-  // responseCity: string;
-  // responseZip: number;
-  // responseState: string;
-  // responsePhone: string;
-  // responseCountry: string;
-  // responseHours: string;
-  // locationIdValue: string;
+  recyclingFacts: Array<string> = [
+    "Without exception, recycling is the top action society can do to simultaneously improve the environment, the economy, sustainable manufacturing, and to prevent waste from going into oceans.",
+    "Recycling is in a crisis in the U.S. due to public confusion about recycling. Find your closest recycling center below!",
+    "U.S. recycling levels are currently 21.4% (recent EPA funded Yale University Study). Let's do our part to find a center and get recycling!",
+    "When U.S. recycling levels reach 75% it will be the environmental and CO2 equivalent of removing 55 million cars from U.S. roads each year. Let's find your closest center below!",
+    "When U.S. recycling levels reach 75% it will generate 1.5 million new jobs in the U.S. (net). Let's find your closest center below!",
+    "Manufacturers truly want these materials back to reuse in their manufacturing, but they aren't able to reuse the materials if people don't recycle. Let's find your closest location and get started!"
+  ]
+
+  recyclingFact: string = "";
   
 
   requestLatLonAndLocation() {
@@ -139,6 +139,8 @@ export class RecycleComponent implements OnInit {
   
 
   ngOnInit() {
+    let integerForRecyclingFact = Math.floor(Math.random() * this.recyclingFacts.length);
+    this.recyclingFact = this.recyclingFacts[integerForRecyclingFact];
   }
 
 } 

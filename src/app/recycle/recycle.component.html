@@ -2,9 +2,12 @@
     <h1>
         Where and what to recycle
     </h1>
+    <p>
+        Did you know: {{ recyclingFact }}
+    </p>
     <div id="locationForm">
         <input [(ngModel)]="ZIP" placeholder="Enter your zip code to begin!" id="locationInput">
-        <button (click)="requestLatLonAndLocation()" id="locationButton">Recycle</button>
+        <button (click)="requestLatLonAndLocation()" id="locationButton">Find a Location</button>
     </div>
     <div *ngFor="let location of responseArrayObjects; index as i" id="locationContainer">
         Name: {{ location[0].description }} <br />
