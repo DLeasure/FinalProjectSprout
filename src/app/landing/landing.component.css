@@ -32,12 +32,12 @@
      height: 350px;
      z-index: 1;
      position: absolute;
-     margin-left: 0%;
+     margin-left: 2%;
  }
 
 
 .spins {
-   margin-left: 7%;
+   margin-left: 12%;
    margin-top: 20%;
    z-index: -1;
 }
@@ -47,7 +47,7 @@
    width: 250px;
    height: 300px;
    z-index: 2;
-   margin-left: 19%;
+   margin-left: 27%;
    margin-top: -90px;
 }
 
@@ -64,8 +64,8 @@
    width: 50%;
    height: 50px;
    z-index: -3;
-   bottom: 30%;
-   margin-left: 25%;
+   bottom: 20%;
+   margin-left: 38%;
 }
 
 #reuse {
@@ -75,8 +75,8 @@
    width: 50%;
    height: 50px;
    z-index: -4;
-   bottom: 30%;
-   margin-left: 25%;
+   bottom: 20%;
+   margin-left: 38%;
 }
 
 #recycle {
@@ -86,7 +86,33 @@
    width: 50%;
    height: 50px;
    z-index: -5;
-   bottom: 30%;
-   margin-left: 25%;
+   bottom: 20%;
+   margin-left: 38%;
+}
+
+.left {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 20%;
+   height: 60px;
+   z-index: -5;
+   bottom: 20%;
+   margin-left: 6%;
+   border-radius: 50px;
+   font-size: 50px;
+}
+
+.right {
+   position: absolute;
+   background-color: green;
+   border-radius: 10px;
+   width: 20%;
+   height: 60px;
+   z-index: -5;
+   bottom: 20%;
+   margin-left: 95%;
+   border-radius: 80px;
+   font-size: 50px;
 }
 

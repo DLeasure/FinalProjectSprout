@@ -61,6 +61,9 @@ export class LandingComponent implements OnInit {
       }
     }
   }
+  optionClicked1() {
+    document.getElementById('image').click();
+  }
   ngOnInit() {
        }
     
