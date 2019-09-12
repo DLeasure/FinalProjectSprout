@@ -21,11 +21,21 @@ a:hover {
   color: green;
 }
 
+#logo {
+  margin-left: 20%;
+  /* margin-right: -33px; */
+  /* margin-top: 5px; */
+  
+ /* margin-left: 110px; */
+ font-family: 'Caveat', cursive;
+ font-size: 45px;
+ color: #303a2c;
+}
+
 #banner{
-  /* display: inline-block; */
   position: fixed;
-  /* display: flex;
-  flex-direction: row; */
+   display: flex;
+   justify-content: flex-start;
   height: 60px;
   width: 100%;
   background-color: #8dbc74;
@@ -143,4 +153,17 @@ a:hover {
 
 #reduce {
   margin-top: 100px;
+}
+
+@media only screen and (min-width: 480px) {
+  #logo {
+    margin-left: 30%;
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #logo {
+    margin-left: 40%;
+    font-size: 50px;
+  }
 }
