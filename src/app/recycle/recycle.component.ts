@@ -68,6 +68,7 @@ export class RecycleComponent implements OnInit {
     updated: "2012-06-20T17:48:50",
     url: "https://www.walmart.com/"
   }}];
+  errorMessage: string = "";
 
   constructor(private earthService: EarthService) {};
   
@@ -84,17 +85,26 @@ export class RecycleComponent implements OnInit {
   
 
   requestLatLonAndLocation() {
-    this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
-      this.latitude = resp.latitude;
-      this.longitude = resp.longitude;
-      // console.log(resp);
-      this.requestLocation();
-    });
+    if (this.ZIP > 4999 && this.ZIP < 100000) {
+      // console.log("searching for " + this.ZIP);
+      this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
+        if (resp !== null) {
+          // console.log(resp);
+          this.latitude = resp.latitude;
+          this.longitude = resp.longitude;
+          // console.log(resp);
+          this.requestLocation();
+        } else {
+          this.errorMessage = "Zip code not found";
+        };
+    })} else {
+      this.errorMessage = "Please enter a 5-digit number to proceed";
+    };
   };
 
   requestLocation() {
     this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe(resp => {
-      console.log("second API request ran");
+      // console.log("second API request ran");
       // console.log(resp);
       for (let index = 0; index < 20; index++) {
         this.responseArrayKeys[index] = (resp[index].location_id);
@@ -106,7 +116,7 @@ export class RecycleComponent implements OnInit {
 
   requestLocationDetails() {
     // console.log(this.responseArrayKeys[0]);
-    console.log("fork runs now");
+    // console.log("fork runs now");
     let promises : Observable<object>[] = [
       this.earthService.getLocationDetails(this.responseArrayKeys[0]),
       this.earthService.getLocationDetails(this.responseArrayKeys[1]),
@@ -132,7 +142,11 @@ export class RecycleComponent implements OnInit {
     forkJoin(promises).subscribe(values => {
       console.log("ran");
       // console.log(values);
+      if (values === null) {
+        this.errorMessage = "no results found";
+      }
       this.responseArrayObjects = values;
+      this.errorMessage = "";
       console.log(this.responseArrayObjects);
     });
   };

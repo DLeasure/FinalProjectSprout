@@ -6,9 +6,12 @@
         Did you know: {{ recyclingFact }}
     </p>
     <div id="locationForm">
-        <input [(ngModel)]="ZIP" placeholder="Enter your zip code to begin!" id="locationInput">
+        <input [(ngModel)]="ZIP" placeholder="Enter your zip code to begin!" id="locationInput" (keydown.enter)="requestLatLonAndLocation()">
         <button (click)="requestLatLonAndLocation()" id="locationButton">Find a Location</button>
     </div>
+    <p *ngIf="errorMessage" id="errorMessage">
+        {{ errorMessage }}
+    </p>
     <div *ngFor="let location of responseArrayObjects; index as i" id="locationContainer">
         Name: {{ location[0].description }} <br />
         Address: {{ location[0].address }} {{ location[0].city }}, {{ location[0].province }} {{ location[0].postal_code }} <br/>
