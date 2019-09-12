@@ -5,31 +5,10 @@
 
 <button (click)="requestLatLonAndLocation()">Recycle</button>
 <br />
-<div *ngIf="response">
-    <ul>
-        <li>
-            Closest location: {{ responseDescription }}
-        </li>
-        <li>
-            Distance from location: {{ responseDistance }}
-        </li>
-        <li>
-            Address: {{ responseAddress }}, {{ responseCity }}, {{ responseState }} {{ responseZip }}, {{ responseCountry }}
-        </li>
-        <li>
-            Phone: {{ responsePhone }}
-        </li>
-        <li>
-            Hours of operation: {{ responseHours }}
-        </li>
-        <!-- <li>
-            Materials: <ul>
-                <li *ngFor="let material of response">
-                    {{material.description}}
-                </li>
-            </ul>
-        </li> -->
-    </ul>
-    
-
+<div *ngFor="let location of responseArrayObjects; index as i">
+    Name: {{ location[0].description }} <br />
+    Address: {{ location[0].address }} {{ location[0].city }}, {{ location[0].province }} {{ location[0].postal_code }} <br/>
+    Phone: {{ location[0].phone }} <br />
+    Hours: {{ location[0].hours }} <br />
+    <br />
 </div>

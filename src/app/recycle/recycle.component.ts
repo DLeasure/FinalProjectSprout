@@ -18,8 +18,8 @@ export class RecycleComponent implements OnInit {
   locationId: string;
 
   response: object;
-  responseArrayKeys: Array<string> = ["first", "30"];
-  responseArrayObjects: Array<object>;
+  responseArrayKeys: Array<string> = [];
+  responseArrayObjects: Array<object> = [];
 
   constructor(private earthService: EarthService) {};
   
@@ -37,8 +37,9 @@ export class RecycleComponent implements OnInit {
 
   requestLatLonAndLocation() {
     this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
-      //this.latitude = resp.latitude;
-      //this.longitude = resp.longitude;
+      this.latitude = resp.latitude;
+      this.longitude = resp.longitude;
+      // console.log(resp);
       this.requestLocation();
     });
   };
@@ -46,16 +47,17 @@ export class RecycleComponent implements OnInit {
   requestLocation() {
     this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe(resp => {
       console.log("second API request ran");
+      // console.log(resp);
       for (let index = 0; index < 20; index++) {
         this.responseArrayKeys[index] = (resp[index].location_id);
       };
-      console.log(this.responseArrayKeys);      
+      // console.log(this.responseArrayKeys);
       this.requestLocationDetails();
     });
   };
 
   requestLocationDetails() {
-    console.log(this.responseArrayKeys[0]);
+    // console.log(this.responseArrayKeys[0]);
     console.log("fork runs now");
     let promises : Observable<object>[] = [
       this.earthService.getLocationDetails(this.responseArrayKeys[0]),
@@ -81,7 +83,9 @@ export class RecycleComponent implements OnInit {
     ];
     forkJoin(promises).subscribe(values => {
       console.log("ran");
-      console.log(values);
+      // console.log(values);
+      this.responseArrayObjects = values;
+      console.log(this.responseArrayObjects);
     });
   };
   
