@@ -7,13 +7,16 @@
     background-color: #e6eae1;
     margin: auto;
     width: 90%;
+    /* padding: 0px 10px; */
     /* height: 100%; */
 }
 
 #locationContainer {
     margin: 0px 10px 20px 10px;
+    /* padding: 0px 10px; */
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     border: 1px solid;
     border-radius: 10px;
     background-color: whitesmoke;
@@ -101,26 +104,31 @@ h1 {
     margin-top: 0;
 }
 
+.locationName {
+    text-align: center;
+    width: 100%;
+    color: #303a2c;
+    margin: 10px 0px;
+};
+
+/* .locationAddress {
+    width: 100%;
+}; */
+
+#locationContainer .locationInfo {
+    /* background-color: black; */
+    /* width: 80%; */
+    /* margin-left: 5px; */
+    padding: 0px 10px;
+    font-size: 200px;
+    /* border: 0px solid #303a2c; */
+};
+
 @media only screen and (min-width: 480px) {
     #contentContainer{
         width: 80%;
     }
 
-    #articleDes {
-        font-size: 20px;
-        width: 70%;
-        margin-left: 15px;
-        text-align: left;
-        margin: auto;
-    }  
-
-    #reduceImg{
-        display: flex;
-        width: 100px;
-        margin-right: 0px;
-        vertical-align: middle;
-        margin-top: 10px;
-    }
     #viewButton {
         margin: 10px 0px 0px 0px;
         font-size: 16px;
@@ -135,10 +143,6 @@ h1 {
         font-size: 40px;
     }
 
-    #articleDes {
-        font-size: 25px;
-        padding: 5px;
-    }
     #viewButton {
         position: relative;
         top: 15px;
