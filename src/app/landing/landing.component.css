@@ -149,3 +149,155 @@
    margin-left: 32%;
 }
 
+@media only screen and (min-width:480px) {
+  
+   .rotate {
+      -ms-transform: rotate(120deg);
+       -webkit-transform: rotate(120deg);
+        transform: rotate(120deg);
+     width:350px;
+     height: 350px;
+     z-index: 1;
+   }
+   
+   .rotate1 {
+      -ms-transform: rotate(240deg);
+       -webkit-transform: rotate(240deg);
+        transform: rotate(240deg);
+     width: 350px;
+     height: 350px;
+     z-index: 1;
+   }
+   
+   .normal {
+      -ms-transform: rotate(0deg);
+       -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+     width: 350px;
+     height: 350px;
+     z-index: 1;
+   }
+  
+   #image {
+      transition: 1s;
+       width: 350px;
+       height: 350px;
+       z-index: 1;
+       position: absolute;
+   }
+  
+  
+  .spins {
+     margin-left: 25%;
+     margin-top: 20%;
+     z-index: -1;
+  }
+  
+  .treee {
+     position: absolute;
+     width: 250px;
+     height: 300px;
+     z-index: 2;
+     margin-left: 33%;
+     margin-top: -10%;
+  }
+  
+  .Pic {
+     position: absolute;
+     z-index: 2;
+     width: 100%;
+  }
+  
+  #reduce {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 30%;
+     height: 50px;
+     z-index: -3;
+     bottom: 20%;
+     margin-left: 36%;
+  }
+  
+  #reuse {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 30%;
+     height: 50px;
+     z-index: -4;
+     bottom: 20%;
+     margin-left: 36%;
+  }
+  
+  #recycle {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 30%;
+     height: 50px;
+     z-index: -5;
+     bottom: 20%;
+     margin-left: 36%;
+  }
+  
+  .left {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 20%;
+     height: 60px;
+     z-index: -5;
+     bottom: 20%;
+     margin-left: 6%;
+     border-radius: 50px;
+     font-size: 50px;
+  }
+  
+  .right {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 20%;
+     height: 60px;
+     z-index: -5;
+     bottom: 20%;
+     margin-left: 75%;
+     border-radius: 80px;
+     font-size: 50px;
+  }
+  
+  #reduce1 {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 60%;
+     height: 60px;
+     z-index: -3;
+     bottom: 1%;
+     margin-left: 22%;
+  }
+  
+  #reuse1 {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 60%;
+     height: 60px;
+     z-index: -4;
+     bottom: 1%;
+     margin-left: 22%;
+  }
+  
+  #recycle1 {
+     position: absolute;
+     background-color: green;
+     border-radius: 10px;
+     width: 60%;
+     height: 60px;
+     z-index: -5;
+     bottom: 1%;
+     margin-left: 22%;
+  }
+}
+
