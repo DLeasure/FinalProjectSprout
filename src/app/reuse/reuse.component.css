@@ -4,6 +4,11 @@
     width: 90%;
 }
 
+#bodyContainer {
+    background-color: #e6eae1;
+    margin: 0;
+}
+
 .articleContainer {
     margin: 0px 10px 20px 10px;
     display: flex;
@@ -33,7 +38,8 @@
 }
 
 .reuseTitle {
-    margin-top: 20px;
+    padding-top: 30px;
+    margin-top: 0;
     text-align: center;
 }
 

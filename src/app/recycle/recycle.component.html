@@ -1,16 +1,24 @@
-<div id="contentContainer">
-    <h1>
-        Where and what to recycle
-    </h1>
-    <div id="locationForm">
-        <input [(ngModel)]="ZIP" placeholder="Enter your zip code to begin!" id="locationInput">
-        <button (click)="requestLatLonAndLocation()" id="locationButton">Recycle</button>
-    </div>
-    <div *ngFor="let location of responseArrayObjects; index as i" id="locationContainer">
-        Name: {{ location[0].description }} <br />
-        Address: {{ location[0].address }} {{ location[0].city }}, {{ location[0].province }} {{ location[0].postal_code }} <br/>
-        Phone: {{ location[0].phone }} <br />
-        Hours: {{ location[0].hours }} <br />
-        <button id="viewButton">View in Maps</button>
+<div id="bodyContainer">
+    <div id="contentContainer">
+        <h1>
+            Where and What to Recycle
+        </h1>
+        <p>
+            Did you know: {{ recyclingFact }}
+        </p>
+        <div id="locationForm">
+            <input [(ngModel)]="ZIP" placeholder="Enter your zip code to begin!" id="locationInput" (keydown.enter)="requestLatLonAndLocation()">
+            <button (click)="requestLatLonAndLocation()" id="locationButton">Find a Location</button>
+        </div>
+        <p *ngIf="errorMessage" id="errorMessage">
+            {{ errorMessage }}
+        </p>
+        <div *ngFor="let location of responseArrayObjects; index as i" id="locationContainer">
+            Name: {{ location[0].description }} <br />
+            Address: {{ location[0].address }} {{ location[0].city }}, {{ location[0].province }} {{ location[0].postal_code }} <br/>
+            Phone: {{ location[0].phone }} <br />
+            Hours: {{ location[0].hours }} <br />
+            <button id="viewButton">View in Maps</button>
+        </div>
     </div>
 </div>
