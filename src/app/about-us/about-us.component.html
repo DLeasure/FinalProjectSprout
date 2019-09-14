@@ -1,23 +1,23 @@
-
 <div id="team">
+        <button (click)="viewAll()">{{message}}</button>
         <div class="teammates">
-                <img src="assets/img/jPlumb.jpeg">
-                <div class="info">
+                <img src="assets/img/jPlumb.jpeg" (click)="toggleJon()" >
+                <div class="info" *ngIf="jonInfoShown">
                         <p>Stuff about Jon</p>
                         <p>LinkedIn: <a href="https://www.linkedin.com/in/jonathon-plumb/">Jonathon Plumb</a></p>
                 </div>
                 
         </div>
         <div class="teammates">
-                <img src="assets/img/dLeasure.jpeg">
-                <div class="info">
+                <img src="assets/img/dLeasure.jpeg" (click)="toggleDave()">
+                <div class="info" *ngIf="daveInfoShown">
                         <p>Stuff about Dave</p>
                         <p>LinkedIn: <a href="https://www.linkedin.com/in/dleasure/">David Leasure</a></p>
                 </div>
         </div>
         <div class="teammates">
-                <img src="assets/img/jBillingslea.jpeg">
-                <div class="info">
+                <img src="assets/img/jBillingslea.jpeg" (click)="toggleJess()">
+                <div class="info" *ngIf="jessInfoShown">
                         <p>Stuff about Jess</p>
                         <p>LinkedIn: <a href="https://www.linkedin.com/in/jessica-billingslea/">Jessica Billingslea</a></p>
                 </div>
