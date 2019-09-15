@@ -4,7 +4,7 @@
     <img src="assets/img/jPlumb.jpeg" (click)="toggleJon()" >
     <div class="info" *ngIf="jonInfoShown">
       <p>Stuff about Jon</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/jonathon-plumb/">Jonathon Plumb</a></p>
+      <p><a href="https://www.linkedin.com/in/jonathon-plumb/" class="fa fa-linkedin-square"></a></p>
     </div>   
   </div>
 
@@ -12,7 +12,7 @@
     <img src="assets/img/dLeasure.jpeg" (click)="toggleDave()">
     <div class="info" *ngIf="daveInfoShown">
       <p>Stuff about Dave</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/dleasure/">David Leasure</a></p>
+      <p><a href="https://www.linkedin.com/in/dleasure/" class="fa fa-linkedin-square"></a></p>
     </div>
   </div>
 
@@ -20,16 +20,17 @@
     <img src="assets/img/jBillingslea.jpeg" (click)="toggleJess()">
     <div class="info" *ngIf="jessInfoShown">
       <p>Stuff about Jess</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/jessica-billingslea/">Jessica Billingslea</a></p>
+      <p><a href="https://www.linkedin.com/in/jessica-billingslea/" class="fa fa-linkedin-square"></a></p>
     </div>
   </div>
 </div>
 
 <hr>
 <div id="canvas">
-  <p id="canvasIntro">Click the empty space below to grow a flower garden</p>
+  <p id="canvasIntro">Click the empty space below to grow a flower garden.</p>
   <div id="app">
-      <button id="clearBtn">Clear canvas</button> 
+      
       <canvas id="flower"></canvas>
+      <button id="clearBtn">Clear canvas</button> 
   </div>
 </div>

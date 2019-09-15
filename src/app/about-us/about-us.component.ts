@@ -19,9 +19,11 @@ export class AboutUsComponent implements OnInit {
   ngOnInit() {
     
     const canvas = <HTMLCanvasElement>document.getElementById('flower');
+
     const flowers = new InteractiveFlowers(canvas);
-    
+
     const btn = document.getElementById('clearBtn');
+
     btn.addEventListener('click', () => {
       flowers.clearCanvas();
     });
