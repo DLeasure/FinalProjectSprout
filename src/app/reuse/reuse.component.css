@@ -37,6 +37,9 @@
     display: none;
 }
 
+button {
+    cursor: pointer;
+}
 .reuseTitle {
     padding-top: 30px;
     margin-top: 0;
