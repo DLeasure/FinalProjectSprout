@@ -1,5 +1,7 @@
 <div id="team">
-  <button (click)="viewAll()">{{message}}</button>
+  <div id="btnContainer">
+    <button id="view-all" (click)="viewAll()">{{message}}</button>
+  </div>
   <div class="teammates">
     <img src="assets/img/jPlumb.jpeg" (click)="toggleJon()" >
     <div class="info" *ngIf="jonInfoShown">
