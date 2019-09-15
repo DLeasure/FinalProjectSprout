@@ -14,10 +14,12 @@
             {{ errorMessage }}
         </p>
         <div *ngFor="let location of responseArrayObjects; index as i" id="locationContainer">
-            Name: {{ location[0].description }} <br />
-            Address: {{ location[0].address }} {{ location[0].city }}, {{ location[0].province }} {{ location[0].postal_code }} <br/>
-            Phone: {{ location[0].phone }} <br />
-            Hours: {{ location[0].hours }} <br />
+            <div id="locationInfo">
+                Name: {{ location[0].description }} <br />
+                Address: {{ location[0].address }} {{ location[0].city }}, {{ location[0].province }} {{ location[0].postal_code }} <br/>
+                Phone: {{ location[0].phone }} <br />
+                Hours: {{ location[0].hours }} <br />
+            </div>
             <button id="viewButton">View in Maps</button>
         </div>
     </div>
