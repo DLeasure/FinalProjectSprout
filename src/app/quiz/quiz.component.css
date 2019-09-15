@@ -12,6 +12,11 @@ body{
     box-shadow: 0px 5px 15px 0px;
     position: relative;
 }
+
+button {
+    cursor: pointer;
+}
+
 #start{
     font-size: 1.5em;
     font-weight: bolder;
