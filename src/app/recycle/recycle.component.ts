@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EarthService } from '../earth.service';
 // import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { forkJoin, Observable } from 'rxjs';
+
 import { MapsService } from '../maps.service'
 
 @Component({
@@ -9,15 +10,12 @@ import { MapsService } from '../maps.service'
   templateUrl: './recycle.component.html',
   styleUrls: ['./recycle.component.css']
 })
-
 export class RecycleComponent implements OnInit {
-
   country: string = "US";
   ZIP: number;
   latitude: number;
   longitude: number;
   locationId: string;
-
   response: object;
   responseArrayKeys: Array<string> = [];
   responseArrayObjects: Array<object> = [
@@ -87,14 +85,11 @@ export class RecycleComponent implements OnInit {
     "When U.S. recycling levels reach 75% it will generate 1.5 million new jobs in the U.S. (net). Let's find your closest center below!",
     "Manufacturers truly want these materials back to reuse in their manufacturing, but they aren't able to reuse the materials if people don't recycle. Let's find your closest location and get started!"
   ]
-
   recyclingFact: string = "";
-  
-
   requestLatLonAndLocation() {
     if (this.ZIP > 4999 && this.ZIP < 100000) {
       // console.log("searching for " + this.ZIP);
-      this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
+      this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe((resp: any) => {
         if (resp !== null) {
           // console.log(resp);
           this.latitude = resp.latitude;
@@ -108,7 +103,6 @@ export class RecycleComponent implements OnInit {
       this.errorMessage = "Please enter a 5-digit number to proceed";
     };
   };
-
   requestLocation() {
     this.earthService.getLocationFromLatLon(this.latitude, this.longitude).subscribe(resp => {
       // console.log("second API request ran");
@@ -120,7 +114,6 @@ export class RecycleComponent implements OnInit {
       this.requestLocationDetails();
     });
   };
-
   requestLocationDetails() {
     // console.log(this.responseArrayKeys[0]);
     // console.log("fork runs now");
@@ -157,11 +150,11 @@ export class RecycleComponent implements OnInit {
       console.log(this.responseArrayObjects);
     });
   };
-  
-
   ngOnInit() {
     let integerForRecyclingFact = Math.floor(Math.random() * this.recyclingFacts.length);
     this.recyclingFact = this.recyclingFacts[integerForRecyclingFact];
   }
+}
 
-} 
+
+
