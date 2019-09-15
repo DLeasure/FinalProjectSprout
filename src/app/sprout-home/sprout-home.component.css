@@ -105,6 +105,10 @@ a:hover {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
+#navigation {
+  /* height: 100%; */
+}
+
 /* Make this absolute positioned*/
 #menu {
   position: absolute;
@@ -112,7 +116,7 @@ a:hover {
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  
+  /* height: 100%; */
   background: #8dbc74;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;

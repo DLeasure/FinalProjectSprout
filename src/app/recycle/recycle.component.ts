@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EarthService } from '../earth.service';
 // import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { forkJoin, Observable } from 'rxjs';
+import { MapsService } from '../maps.service'
 
 @Component({
   selector: 'app-recycle',
@@ -72,8 +73,12 @@ export class RecycleComponent implements OnInit {
   ];
   errorMessage: string = "";
 
-  constructor(private earthService: EarthService) {};
+  constructor(private earthService: EarthService, private mapsService : MapsService) {};
   
+  openInMaps(lat, lng) {
+    return this.mapsService.openLocationInMaps(lat, lng);
+  };
+
   recyclingFacts: Array<string> = [
     "Without exception, recycling is the top action society can do to simultaneously improve the environment, the economy, sustainable manufacturing, and to prevent waste from going into oceans.",
     "Recycling is in a crisis in the U.S. due to public confusion about recycling. Find your closest recycling center below!",

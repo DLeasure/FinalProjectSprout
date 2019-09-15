@@ -91,6 +91,10 @@ h1 {
     margin-top: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
 .locationName {
     text-align: center;
     width: 100%;
@@ -139,4 +143,11 @@ h1 {
         border-radius: 20px;
         padding: 5px;
     }  
+
+    #buttonLink {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
 }
