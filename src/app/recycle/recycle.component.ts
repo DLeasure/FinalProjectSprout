@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { EarthService } from '../earth.service';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+// import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { forkJoin, Observable } from 'rxjs';
+
+import { MapsService } from '../maps.service'
+
 @Component({
   selector: 'app-recycle',
   templateUrl: './recycle.component.html',
@@ -15,9 +18,65 @@ export class RecycleComponent implements OnInit {
   locationId: string;
   response: object;
   responseArrayKeys: Array<string> = [];
-  responseArrayObjects: Array<object> = [];
+  responseArrayObjects: Array<object> = [
+    {0: {
+      address: "46922 Romeo Plank",
+      city: "Macomb",
+      country: "US",
+      created: "2011-12-20T11:53:27",
+      curbside: false,
+      description: "AutoZone",
+      event_only: false,
+      fax: "",
+      geocoded: true,
+      hours: "Please call for hours of operation.",
+      latitude: 42.64244119839103,
+      location_type_id: 28,
+      longitude: -82.93529707050959,
+      municipal: false,
+      national: false,
+      notes: null,
+      notes_public: null,
+      phone: "(586) 226-2730",
+      postal_code: "48044",
+      province: "MI",
+      region: "Macomb",
+      updated: "2011-12-20T11:53:27",
+      url: "https://www.autozone.com/landing/page.jsp?name=in-our-stores"
+    }}, {0: {
+      address: "18400 Hall Rd",
+      city: "Charter Township of Clinton",
+      country: "US",
+      created: "2012-06-20T17:48:50",
+      curbside: false,
+      description: "Walmart Supercenter",
+      event_only: false,
+      fax: "",
+      geocoded: true,
+      hours: "Please call for hours of operation.",
+      latitude: 42.62599730967077,
+      location_type_id: 28,
+      longitude: -82.93753160591059,
+      municipal: false,
+      national: false,
+      notes: null,
+      notes_public: null,
+      phone: "(586) 263-7196",
+      postal_code: "48038",
+      province: "MI",
+      region: "Macomb",
+      updated: "2012-06-20T17:48:50",
+      url: "https://www.walmart.com/"
+    }}
+  ];
   errorMessage: string = "";
-  constructor(private earthService: EarthService) {};
+
+  constructor(private earthService: EarthService, private mapsService : MapsService) {};
+  
+  openInMaps(lat, lng) {
+    return this.mapsService.openLocationInMaps(lat, lng);
+  };
+
   recyclingFacts: Array<string> = [
     "Without exception, recycling is the top action society can do to simultaneously improve the environment, the economy, sustainable manufacturing, and to prevent waste from going into oceans.",
     "Recycling is in a crisis in the U.S. due to public confusion about recycling. Find your closest recycling center below!",
