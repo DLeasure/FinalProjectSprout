@@ -1,21 +1,21 @@
 <div class="page">
-        <img src="assets/img/theTree.jpg" class="treee" />
-<div class="page">
-
-
-<div class="spins">
-<img src="assets/img/SproutSymbol.png" alt="image"  class="normal" class="rotate1" id="image"/>
-</div>
-</div>
-<div class="buttonss">
-<button class="left" (click)="Rotate()"><</button>
-<button id="reduce" routerLink="/reduce">reduce</button>
-<p id="reduce1">Reduce facts are good for your colesterol</p>
-<button id="reuse" routerLink="/reuse">reuse</button>
-<p id="reuse1">Reuse your old toenail clippings. Click for fun ideas on how</p>
-<button id="recycle" routerLink="/recycle">recycle</button>
-<P id="recycle1">recycle. Youll be glad you did homie</P>
-<button class="right" (click)="Rotate()">></button>
+        <img src="assets/img/theTree.jpg" class="tree" />
+        <div class="page">
+                <div class="spins">
+                        <img src="assets/img/SproutSymbol.png" alt="image" id="image"/>
+                </div>
+        </div>
+        <div id="buttons">
+                <button id="reduce" class="componentButton" routerLink="/reduce">reduce</button> 
+                <button id="reuse" class="componentButton" routerLink="/reuse">reuse</button> 
+                <button id="recycle" class="componentButton" routerLink="/recycle">recycle</button> 
+        </div>
+        <p id="activeFacts">
+                {{ activeFacts }}
+        </p>
+        <p>
+                <button >Learn more about {{ activeButton }}</button>
+        </p>
 </div>
 
 
