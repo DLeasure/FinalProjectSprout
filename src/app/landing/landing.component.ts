@@ -16,10 +16,40 @@ export class LandingComponent implements OnInit {
   constructor() { }
 
   activeFacts : string = "Facts about reusing";
+  recycleActive : boolean = false;
+  reuseActive : boolean = false;
+  reduceActive : boolean = true;
 
-  rotateTree(component) {
-
-  }
+  updateSelectedComponent(component : string) {
+    var element = document.getElementById('image');
+    this.recycleActive = false;
+    this.reuseActive = false;
+    this.reduceActive = false;
+    console.log("clicked");
+    switch(component) {
+      case "recycle": {
+        console.log("recycle clicked");
+        this.recycleActive = true;
+        element.className = "rotateToRecycle";
+        break;
+      }
+      case "reuse": {
+        console.log("reuse clicked");
+        this.reuseActive = true;
+        element.className = "rotateToReuse";
+        break;
+      }
+      case "reduce": {
+        console.log("reduce clicked");
+        this.reduceActive = true;
+        element.className = "rotateToReduce";
+        break;
+      }
+      default: {
+        console.log("default selected");
+      }
+    };
+  };
 
   // Rotate() {
   //   var element = document.getElementById('image');
