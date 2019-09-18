@@ -25,28 +25,28 @@ export class LandingComponent implements OnInit {
     this.recycleActive = false;
     this.reuseActive = false;
     this.reduceActive = false;
-    console.log("clicked");
+    // console.log("clicked");
     switch(component) {
       case "recycle": {
-        console.log("recycle clicked");
+        // console.log("recycle clicked");
         this.recycleActive = true;
         element.className = "rotateToRecycle";
         break;
       }
       case "reuse": {
-        console.log("reuse clicked");
+        // console.log("reuse clicked");
         this.reuseActive = true;
         element.className = "rotateToReuse";
         break;
       }
       case "reduce": {
-        console.log("reduce clicked");
+        // console.log("reduce clicked");
         this.reduceActive = true;
         element.className = "rotateToReduce";
         break;
       }
       default: {
-        console.log("default selected");
+        // console.log("default selected");
       }
     };
   };
