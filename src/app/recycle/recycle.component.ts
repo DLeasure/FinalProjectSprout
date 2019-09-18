@@ -71,15 +71,11 @@ export class RecycleComponent implements OnInit {
   ];
   errorMessage: string = "";
 
-<<<<<<< HEAD
-  constructor(private earthService: EarthService) {};
-=======
   constructor(private earthService: EarthService, private mapsService : MapsService) {};
   
   openInMaps(lat, lng) {
     return this.mapsService.openLocationInMaps(lat, lng);
   };
->>>>>>> b6c65c94553cee5d26474a760c7f4ed43dfac938
 
   recyclingFacts: Array<string> = [
     "Without exception, recycling is the top action society can do to simultaneously improve the environment, the economy, sustainable manufacturing, and to prevent waste from going into oceans.",
@@ -90,11 +86,6 @@ export class RecycleComponent implements OnInit {
     "Manufacturers truly want these materials back to reuse in their manufacturing, but they aren't able to reuse the materials if people don't recycle. Let's find your closest location and get started!"
   ]
   recyclingFact: string = "";
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b6c65c94553cee5d26474a760c7f4ed43dfac938
   requestLatLonAndLocation() {
     if (this.ZIP > 4999 && this.ZIP < 100000) {
       // console.log("searching for " + this.ZIP);
@@ -159,11 +150,6 @@ export class RecycleComponent implements OnInit {
       console.log(this.responseArrayObjects);
     });
   };
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b6c65c94553cee5d26474a760c7f4ed43dfac938
   ngOnInit() {
     let integerForRecyclingFact = Math.floor(Math.random() * this.recyclingFacts.length);
     this.recyclingFact = this.recyclingFacts[integerForRecyclingFact];
@@ -172,7 +158,3 @@ export class RecycleComponent implements OnInit {
 
 
 
-<<<<<<< HEAD
-}
-=======
->>>>>>> b6c65c94553cee5d26474a760c7f4ed43dfac938

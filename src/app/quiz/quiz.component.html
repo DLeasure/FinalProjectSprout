@@ -2,17 +2,9 @@
     <div *ngIf="_displayTitle" class="start" (click)="startQuiz()">Start Quiz!</div>
     <div *ngIf="!_displayTitle" id="quiz">
         <div class="question">{{_questionAndAnswer.question}}</div>
-        <div class="qImg">
-            <img [src]="_questionAndAnswer.image" />
-        </div>
+        
         <div class="choices">
             <div class="choice" *ngFor="let answer of _answers" (click)="submitAnswer(answer)">{{answer}}</div>
-            <div>{{_numberCorrect}}</div>
-        </div>
-        <div id="timer">
-            <div id="counter"></div>
-            <div id="btimeGauge"></div>
-            <div id="timeGauge"></div>
         </div>
         <div id="progress"></div>
     </div>

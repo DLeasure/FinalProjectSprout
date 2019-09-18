@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizInfoService } from '../services/quiz-info.service';
-<<<<<<< HEAD
 import { QuestionsAndAnswers } from '../models/questions-and-answers';
-=======
-import { QuestionsAndAnswers } from '../models/question-and-answers';
->>>>>>> b6c65c94553cee5d26474a760c7f4ed43dfac938
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
+
 export class QuizComponent implements OnInit {
 
   _questionsAndAnswers: QuestionsAndAnswers[];
@@ -96,3 +93,4 @@ export class QuizComponent implements OnInit {
     this._answers = this.generateOrderForAnswers();
   }
 }
+
