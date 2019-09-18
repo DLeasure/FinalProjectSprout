@@ -12,6 +12,8 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   background-color: #e6eae1;
+  width: 90%;
+  margin: auto;
 }
 
 #btnContainer{
@@ -60,6 +62,8 @@ hr{
 }
 
 #canvas{
+  width: 90%;
+  margin: auto;
   background-color: #e6eae1;
 }
 
@@ -102,8 +106,16 @@ hr{
     width: 150px;
   }
 
+  #team{
+    width: 80%;
+  }
+
   button{
     font-size: 16px;
+  }
+
+  #canvas{
+    width: 80%;
   }
 
   .info, #canvasIntro{
@@ -120,8 +132,20 @@ hr{
     width: 200px;
   }
 
+  #team {
+    width: 70%;
+  }
+
   button{
     font-size: 18px;
+  }
+
+  #canvas{
+    width: 70%;
+  }
+
+  #clearBtn{
+    width: 70%;
   }
 
   .info, #canvasIntro{
