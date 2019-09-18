@@ -198,50 +198,66 @@ button:focus {
 
 @media only screen and (min-width:480px) {
 
-   .rotate {
+   /* .rotate {
       -ms-transform: rotate(120deg);
       -webkit-transform: rotate(120deg);
       transform: rotate(120deg);
       width:350px;
       height: 350px;
       z-index: 1;
+   } */
+
+   .componentButton {
+      width: 100px;
+      margin: 10px;
+   }
+
+   #buttons {
+      justify-content: center;
    }
    
-   .rotate1 {
+   /* .rotate1 {
       -ms-transform: rotate(240deg);
       -webkit-transform: rotate(240deg);
       transform: rotate(240deg);
       width: 350px;
       height: 350px;
       z-index: 1;
-   }
+   } */
    
-   .normal {
+   /* .normal {
       -ms-transform: rotate(0deg);
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
       width: 350px;
       height: 350px;
       z-index: 1;
+   } */
+
+   .spins {
+      /* left: 50%; */
+      width: 350px;
+      margin: auto;
+      transform: translateX(0%);
    }
   
    #image {
-      transition: 1s;
+      /* transition: 1s; */
       width: 350px;
       height: 350px;
-      z-index: 1;
-      position: absolute;
+      /* z-index: 1;
+      position: absolute; */
    }
   
   
-   .spins {
+   /* .spins {
       margin-left: 25%;
       margin-top: 20%;
       z-index: -1;
-   }
+   } */
   
    .tree {
-      position: absolute;
+      /* position: absolute; */
       width: 250px;
       height: 300px;
       z-index: 2;
@@ -249,46 +265,46 @@ button:focus {
       margin-top: -10%; */
    }
   
-   .Pic {
+   /* .Pic {
       position: absolute;
       z-index: 2;
       width: 100%;
-   }
+   } */
   
    #reduce {
-      position: absolute;
+      /* position: absolute;
       background-color: green;
       border-radius: 10px;
       width: 30%;
       height: 50px;
       z-index: -3;
       bottom: 20%;
-      margin-left: 36%;
+      margin-left: 36%; */
    }
   
    #reuse {
-      position: absolute;
+      /* position: absolute;
       background-color: green;
       border-radius: 10px;
       width: 30%;
       height: 50px;
       z-index: -4;
       bottom: 20%;
-      margin-left: 36%;
+      margin-left: 36%; */
    }
   
    #recycle {
-      position: absolute;
+      /* position: absolute;
       background-color: green;
       border-radius: 10px;
       width: 30%;
       height: 50px;
       z-index: -5;
       bottom: 20%;
-      margin-left: 36%;
+      margin-left: 36%; */
    }
   
-   .left {
+   /* .left {
       position: absolute;
       background-color: green;
       border-radius: 10px;
@@ -299,9 +315,9 @@ button:focus {
       margin-left: 6%;
       border-radius: 50px;
       font-size: 50px;
-   }
+   } */
   
-   .right {
+   /* .right {
       position: absolute;
       background-color: green;
       border-radius: 10px;
@@ -312,9 +328,9 @@ button:focus {
       margin-left: 75%;
       border-radius: 80px;
       font-size: 50px;
-   }
+   } */
   
-   #reduce1 {
+   /* #reduce1 {
       position: absolute;
       background-color: green;
       border-radius: 10px;
@@ -323,9 +339,9 @@ button:focus {
       z-index: -3;
       bottom: 1%;
       margin-left: 22%;
-   }
+   } */
   
-   #reuse1 {
+   /* #reuse1 {
       position: absolute;
       background-color: green;
       border-radius: 10px;
@@ -334,9 +350,9 @@ button:focus {
       z-index: -4;
       bottom: 1%;
       margin-left: 22%;
-   }
+   } */
   
-   #recycle1 {
+   /* #recycle1 {
       position: absolute;
       background-color: green;
       border-radius: 10px;
@@ -345,6 +361,6 @@ button:focus {
       z-index: -5;
       bottom: 1%;
       margin-left: 22%;
-   }
+   } */
 }
 
