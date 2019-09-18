@@ -4,6 +4,8 @@ const routes = require('./routes');
 
 app.use(routes);
 
-app.listen(3500, () => {
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
     console.log("Server Running");
 });
