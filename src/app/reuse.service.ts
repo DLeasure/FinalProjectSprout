@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,6 @@ export class ReuseService {
 
   getData(): Observable<any> {
     return this._http.get('https://www.reddit.com/r/Reuse/.json');
+  }
 }
-};
 

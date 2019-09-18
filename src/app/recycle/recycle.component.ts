@@ -23,7 +23,7 @@ export class RecycleComponent implements OnInit {
   errorMessage: string = "";
 
   constructor(private earthService: EarthService) {};
-  
+
   recyclingFacts: Array<string> = [
     "Without exception, recycling is the top action society can do to simultaneously improve the environment, the economy, sustainable manufacturing, and to prevent waste from going into oceans.",
     "Recycling is in a crisis in the U.S. due to public confusion about recycling. Find your closest recycling center below!",
@@ -34,12 +34,12 @@ export class RecycleComponent implements OnInit {
   ]
 
   recyclingFact: string = "";
-  
+
 
   requestLatLonAndLocation() {
     if (this.ZIP > 4999 && this.ZIP < 100000) {
       // console.log("searching for " + this.ZIP);
-      this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe(resp => {
+      this.earthService.getUsersLatLon(this.country, this.ZIP).subscribe((resp: any) => {
         if (resp !== null) {
           // console.log(resp);
           this.latitude = resp.latitude;
@@ -102,11 +102,11 @@ export class RecycleComponent implements OnInit {
       console.log(this.responseArrayObjects);
     });
   };
-  
+
 
   ngOnInit() {
     let integerForRecyclingFact = Math.floor(Math.random() * this.recyclingFacts.length);
     this.recyclingFact = this.recyclingFacts[integerForRecyclingFact];
   }
 
-} 
+}
