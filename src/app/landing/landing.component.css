@@ -48,13 +48,13 @@ html {
 
 .tree {
    position: absolute;
-   width: 200px;
-   height: 240px;
+   width: 40%;
+   /* height: 150px; */
    z-index: 2;
    /* margin: auto; */
    left: 50%;
    transform: translateX(-50%);
-   top: 20px;
+   top: 6em;
 }
 
 .Pic {
@@ -80,7 +80,7 @@ html {
 
 .routeToComponentButton {
    position: relative;
-   display: inline-block;
+   /* display: inline-block; */
    background-color: #303a2c;
    border-radius: 10px;
    /* width: 25%; */
@@ -110,6 +110,8 @@ button:focus {
 #routingButtons {
    width: 100%;
    display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
    justify-content: center;
    align-items: center;
    align-content: center;
@@ -121,97 +123,7 @@ button:focus {
    margin-right: 10%;
 }
 
-#reuse {
-   /* position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 50%;
-   height: 50px;
-   z-index: -4;
-   bottom: 20%;
-   margin-left: 36%; */
-}
-
-#recycle {
-   /* position: absolute;
-   background-color: green;
-   border-radius: 10px; */
-   /* width: 25%; */
-   /* height: 50px; */
-   /* z-index: 3;
-   bottom: 20%;
-   margin-left: 36%; */
-}
-
-/* .left {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 20%;
-   height: 60px;
-   z-index: -5;
-   bottom: 20%;
-   margin-left: 6%;
-   border-radius: 50px;
-   font-size: 50px;
-} */
-
-/* .right {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 20%;
-   height: 60px;
-   z-index: -5;
-   bottom: 20%;
-   margin-left: 95%;
-   border-radius: 80px;
-   font-size: 50px;
-} */
-
-/* #reduce1 {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 60%;
-   height: 60px;
-   z-index: -3;
-   bottom: 1%;
-   margin-left: 32%;
-} */
-/* 
-#reuse1 {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 60%;
-   height: 60px;
-   z-index: -4;
-   bottom: 1%;
-   margin-left: 32%;
-}
-
-#recycle1 {
-   position: absolute;
-   background-color: #303a2c;
-   border-radius: 10px;
-   width: 60%;
-   height: 60px;
-   z-index: -5;
-   bottom: 1%;
-   margin-left: 32%;
-} */
-
 @media only screen and (min-width:480px) {
-
-   /* .rotate {
-      -ms-transform: rotate(120deg);
-      -webkit-transform: rotate(120deg);
-      transform: rotate(120deg);
-      width:350px;
-      height: 350px;
-      z-index: 1;
-   } */
 
    .componentButton {
       width: 100px;
@@ -222,24 +134,6 @@ button:focus {
       justify-content: center;
    }
    
-   /* .rotate1 {
-      -ms-transform: rotate(240deg);
-      -webkit-transform: rotate(240deg);
-      transform: rotate(240deg);
-      width: 350px;
-      height: 350px;
-      z-index: 1;
-   } */
-   
-   /* .normal {
-      -ms-transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-      width: 350px;
-      height: 350px;
-      z-index: 1;
-   } */
-
    .spins {
       /* left: 50%; */
       width: 350px;
@@ -255,118 +149,13 @@ button:focus {
       position: absolute; */
    }
   
-  
-   /* .spins {
-      margin-left: 25%;
-      margin-top: 20%;
-      z-index: -1;
-   } */
-  
    .tree {
       /* position: absolute; */
-      width: 250px;
-      height: 300px;
+      width: 200px;
+      /* height: 300px; */
       z-index: 2;
       /* margin-left: 33%;
       margin-top: -10%; */
    }
-  
-   /* .Pic {
-      position: absolute;
-      z-index: 2;
-      width: 100%;
-   } */
-  
-   #reduce {
-      /* position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 30%;
-      height: 50px;
-      z-index: -3;
-      bottom: 20%;
-      margin-left: 36%; */
-   }
-  
-   #reuse {
-      /* position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 30%;
-      height: 50px;
-      z-index: -4;
-      bottom: 20%;
-      margin-left: 36%; */
-   }
-  
-   #recycle {
-      /* position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 30%;
-      height: 50px;
-      z-index: -5;
-      bottom: 20%;
-      margin-left: 36%; */
-   }
-  
-   /* .left {
-      position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 20%;
-      height: 60px;
-      z-index: -5;
-      bottom: 20%;
-      margin-left: 6%;
-      border-radius: 50px;
-      font-size: 50px;
-   } */
-  
-   /* .right {
-      position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 20%;
-      height: 60px;
-      z-index: -5;
-      bottom: 20%;
-      margin-left: 75%;
-      border-radius: 80px;
-      font-size: 50px;
-   } */
-  
-   /* #reduce1 {
-      position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 60%;
-      height: 60px;
-      z-index: -3;
-      bottom: 1%;
-      margin-left: 22%;
-   } */
-  
-   /* #reuse1 {
-      position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 60%;
-      height: 60px;
-      z-index: -4;
-      bottom: 1%;
-      margin-left: 22%;
-   } */
-  
-   /* #recycle1 {
-      position: absolute;
-      background-color: green;
-      border-radius: 10px;
-      width: 60%;
-      height: 60px;
-      z-index: -5;
-      bottom: 1%;
-      margin-left: 22%;
-   } */
 }
 

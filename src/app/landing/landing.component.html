@@ -1,5 +1,5 @@
 <div id="page">
-        <img src="assets/img/theTree.jpg" class="tree" />
+        <img src="assets/img/SproutLogoBackground.png" class="tree" />
         <div class="page">
                 <div class="spins">
                         <img src="assets/img/SproutSymbol.png" class="rotateToReduce" id="image"/>
@@ -13,7 +13,8 @@
         <div id="routingButtons">
                 <button *ngIf="reduceActive" id="reduceRoute" class="routeToComponentButton" routerLink="/reduce">Learn more about reducing your carbon footprint</button> 
                 <button *ngIf="reuseActive" id="reuseRoute" class="routeToComponentButton" routerLink="/reuse">Find creative ways to upcycle your used items</button> 
-                <button *ngIf="recycleActive" id="recycleRoute" class="routeToComponentButton" routerLink="/recycle">Find your closest recycling facility</button> 
+                <button *ngIf="recycleActive" id="recycleRoute" class="routeToComponentButton" routerLink="/recycle">Find your closest recycling facility</button> <br />
+                <button id="quizRoute" class="routeToComponentButton" routerLink="/quiz">Think you're an expert? Take our quiz and prove it!</button> 
         </div>
         <p id="activeFacts">
                 {{ activeFacts }}
