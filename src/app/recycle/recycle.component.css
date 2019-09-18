@@ -7,30 +7,28 @@
     background-color: #e6eae1;
     margin: auto;
     width: 90%;
-    /* height: 100%; */
 }
 
 #locationContainer {
     margin: 0px 10px 20px 10px;
+    /* padding: 0px 10px; */
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     border: 1px solid;
     border-radius: 10px;
     background-color: whitesmoke;
+}
+
+#locationInfo{
+    padding: 10px;
+    width: 100%;
 }
 
 #locationForm {
     display: flex;
     justify-content: center;
     margin: 0px 0px 20px 0px;
-    /* display: block; */
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* position: relative; */
-
-    /* left: 50%; */
-    /* width: 50%; */
-    /* transform: translateX(-50%); */
 }
 
 #locationInput {
@@ -38,7 +36,6 @@
     width: 180px;
     margin: 0px;
     border-radius: 24px 0 0 24px;
-    /* display: inline; */
     padding-left: 10px;
 }
 
@@ -51,16 +48,9 @@ button:focus {
 }
 
 #locationButton {
-    /* width: 100%; */
-    /* padding: 5px; */
     color: white;
     background-color: #50833c;
-    /* border-width: 0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; */
     position: relative;
-    /* top: 15px; */
-    /* margin-top: 0px; */
     margin: 0px;
     width: 120px;
     border-radius: 0 24px 24px 0;
@@ -101,26 +91,35 @@ h1 {
     margin-top: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
+.locationName {
+    text-align: center;
+    width: 100%;
+    color: #303a2c;
+    margin: 10px 0px;
+};
+
+/* .locationAddress {
+    width: 100%;
+}; */
+
+#locationContainer .locationInfo {
+    /* background-color: black; */
+    /* width: 80%; */
+    /* margin-left: 5px; */
+    padding: 0px 10px;
+    font-size: 200px;
+    /* border: 0px solid #303a2c; */
+};
+
 @media only screen and (min-width: 480px) {
     #contentContainer{
         width: 80%;
     }
 
-    #articleDes {
-        font-size: 20px;
-        width: 70%;
-        margin-left: 15px;
-        text-align: left;
-        margin: auto;
-    }  
-
-    #reduceImg{
-        display: flex;
-        width: 100px;
-        margin-right: 0px;
-        vertical-align: middle;
-        margin-top: 10px;
-    }
     #viewButton {
         margin: 10px 0px 0px 0px;
         font-size: 16px;
@@ -135,10 +134,6 @@ h1 {
         font-size: 40px;
     }
 
-    #articleDes {
-        font-size: 25px;
-        padding: 5px;
-    }
     #viewButton {
         position: relative;
         top: 15px;
@@ -148,4 +143,11 @@ h1 {
         border-radius: 20px;
         padding: 5px;
     }  
+
+    #buttonLink {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
 }

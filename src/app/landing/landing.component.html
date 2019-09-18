@@ -1,21 +1,24 @@
-<div class="page">
-        <img src="assets/img/theTree.jpg" class="treee" />
-<div class="page">
-
-
-<div class="spins">
-<img src="assets/img/SproutSymbol.png" alt="image"  class="normal" class="rotate1" id="image"/>
-</div>
-</div>
-<div class="buttonss">
-<button class="left" (click)="Rotate()"><</button>
-<button id="reduce" routerLink="/reduce">reduce</button>
-<p id="reduce1">Reduce facts are good for your colesterol</p>
-<button id="reuse" routerLink="/reuse">reuse</button>
-<p id="reuse1">Reuse your old toenail clippings. Click for fun ideas on how</p>
-<button id="recycle" routerLink="/recycle">recycle</button>
-<P id="recycle1">recycle. Youll be glad you did homie</P>
-<button class="right" (click)="Rotate()">></button>
+<div id="page">
+        <img src="assets/img/SproutLogoBackground.png" class="tree" />
+        <div class="page">
+                <div class="spins">
+                        <img src="assets/img/SproutSymbol.png" class="rotateToReduce" id="image"/>
+                </div>
+        </div>
+        <div id="buttons">
+                <button [ngStyle]="{'background-color': reduceActive ? '#79916e' : '#303a2c'}" id="reduce" class="componentButton" (click)="updateSelectedComponent('reduce')">reduce</button> 
+                <button [ngStyle]="{'background-color': reuseActive ? '#79916e' : '#303a2c'}" id="reuse" class="componentButton" (click)="updateSelectedComponent('reuse')">reuse</button> 
+                <button [ngStyle]="{'background-color': recycleActive ? '#79916e' : '#303a2c'}" id="recycle" class="componentButton" (click)="updateSelectedComponent('recycle')">recycle</button> 
+        </div>
+        <div id="routingButtons">
+                <button *ngIf="reduceActive" id="reduceRoute" class="routeToComponentButton" routerLink="/reduce">Learn more about reducing your carbon footprint</button> 
+                <button *ngIf="reuseActive" id="reuseRoute" class="routeToComponentButton" routerLink="/reuse">Find creative ways to upcycle your used items</button> 
+                <button *ngIf="recycleActive" id="recycleRoute" class="routeToComponentButton" routerLink="/recycle">Find your closest recycling facility</button> <br />
+                <button id="quizRoute" class="routeToComponentButton" routerLink="/quiz">Think you're an expert? Take our quiz and prove it!</button> 
+        </div>
+        <p id="activeFacts">
+                {{ activeFacts }}
+        </p>
 </div>
 
 

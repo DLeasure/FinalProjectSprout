@@ -1,54 +1,60 @@
-.rotate {
-    -ms-transform: rotate(120deg);
-     -webkit-transform: rotate(120deg);
-      transform: rotate(120deg);
-   width:350px;
-   height: 350px;
-   z-index: 1;
- }
- 
- .rotate1 {
-    -ms-transform: rotate(240deg);
-     -webkit-transform: rotate(240deg);
-      transform: rotate(240deg);
-   width:350px;
-   height: 350px;
-   padding-left: - 10px;
-   z-index: 1;
- }
- 
- .normal {
-    -ms-transform: rotate(0deg);
-     -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-   width: 350px;
-   height: 350px;
-   z-index: 1;
- }
-
- #image {
-    transition: 1s;
-     width: 350px;
-     height: 350px;
-     z-index: 1;
-     position: absolute;
-     margin-left: 2%;
- }
-
-
-.spins {
-   margin-left: 12%;
-   margin-top: 20%;
-   z-index: -1;
+html {
+   width: 100%;
 }
 
-.treee {
+#page {
+   width: 100%;
+}
+
+#image {
+   transition: 1s;
+   width: 80%;
+   /* left: 50%; */
+   /* transform: translateX(-50%); */
+   /* height: 350px; */
+   /* z-index: 1; */
+   /* position: absolute; */
+   /* margin: auto; */
+   top: 50px;
+}
+
+.rotateToReduce {
+   -ms-transform: rotate(120deg);
+   -webkit-transform: rotate(120deg);
+   transform: rotate(120deg);
+}
+ 
+ .rotateToReuse {
+   -ms-transform: rotate(240deg);
+   -webkit-transform: rotate(240deg);
+   transform: rotate(240deg);
+   padding-left: - 10px;
+}
+
+.rotateToRecycle {
+   -ms-transform: rotate(0deg);
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg);
+}
+
+.spins {
+   /* margin-left: 12%; */
+   /* margin-top: 20%; */
+   /* z-index: 1; */
+   /* margin: auto; */
+   width: 100%;
+   transform: translateX(10%);
+}
+
+.tree {
    position: absolute;
-   width: 250px;
-   height: 300px;
+   width: 40%;
+   /* height: 150px; */
    z-index: 2;
-   margin-left: 27%;
-   margin-top: -90px;
+   /* margin: auto; */
+   left: 50%;
+   transform: translateX(-50%);
+   top: 6em;
 }
 
 .Pic {
@@ -57,247 +63,99 @@
    width: 100%;
 }
 
-#reduce {
-   position: absolute;
-   background-color: green;
+.componentButton {
+   position: relative;
+   display: inline-block;
+   /* background-color: #303a2c; */
    border-radius: 10px;
-   width: 50%;
-   height: 50px;
-   z-index: -3;
-   bottom: 20%;
-   margin-left: 36%;
+   width: 25%;
+   /* height: 50px; */
+   z-index: 3;
+   color: #f5f5f5;
+   font-family: 'Caveat', cursive;
+   font-size: 1.5em;
+   /* bottom: 20%; */
+   /* margin-left: 36%; */
 }
 
-#reuse {
-   position: absolute;
-   background-color: green;
+.routeToComponentButton {
+   position: relative;
+   /* display: inline-block; */
+   background-color: #303a2c;
    border-radius: 10px;
-   width: 50%;
-   height: 50px;
-   z-index: -4;
-   bottom: 20%;
-   margin-left: 36%;
+   /* width: 25%; */
+   /* height: 50px; */
+   z-index: 3;
+   color: #f5f5f5;
+   font-family: 'Caveat', cursive;
+   font-size: 1.1em;
+   /* bottom: 20%; */
+   /* margin-left: 36%; */
+   margin: 5px 0px 0px 0px;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
-#recycle {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 50%;
-   height: 50px;
-   z-index: -5;
-   bottom: 20%;
-   margin-left: 36%;
+button:focus {
+   outline:0;
 }
 
-.left {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 20%;
-   height: 60px;
-   z-index: -5;
-   bottom: 20%;
-   margin-left: 6%;
-   border-radius: 50px;
-   font-size: 50px;
+#buttons {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   /* height: 55px; */
+};
+
+#routingButtons {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
 }
 
-.right {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 20%;
-   height: 60px;
-   z-index: -5;
-   bottom: 20%;
-   margin-left: 95%;
-   border-radius: 80px;
-   font-size: 50px;
-}
-
-#reduce1 {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 60%;
-   height: 60px;
-   z-index: -3;
-   bottom: 1%;
-   margin-left: 32%;
-}
-
-#reuse1 {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 60%;
-   height: 60px;
-   z-index: -4;
-   bottom: 1%;
-   margin-left: 32%;
-}
-
-#recycle1 {
-   position: absolute;
-   background-color: green;
-   border-radius: 10px;
-   width: 60%;
-   height: 60px;
-   z-index: -5;
-   bottom: 1%;
-   margin-left: 32%;
+#activeFacts {
+   text-align: center;
+   margin-left: 10%;
+   margin-right: 10%;
 }
 
 @media only screen and (min-width:480px) {
-  
-   .rotate {
-      -ms-transform: rotate(120deg);
-       -webkit-transform: rotate(120deg);
-        transform: rotate(120deg);
-     width:350px;
-     height: 350px;
-     z-index: 1;
+
+   .componentButton {
+      width: 100px;
+      margin: 10px;
+   }
+
+   #buttons {
+      justify-content: center;
    }
    
-   .rotate1 {
-      -ms-transform: rotate(240deg);
-       -webkit-transform: rotate(240deg);
-        transform: rotate(240deg);
-     width: 350px;
-     height: 350px;
-     z-index: 1;
-   }
-   
-   .normal {
-      -ms-transform: rotate(0deg);
-       -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-     width: 350px;
-     height: 350px;
-     z-index: 1;
+   .spins {
+      /* left: 50%; */
+      width: 350px;
+      margin: auto;
+      transform: translateX(0%);
    }
   
    #image {
-      transition: 1s;
-       width: 350px;
-       height: 350px;
-       z-index: 1;
-       position: absolute;
+      /* transition: 1s; */
+      width: 350px;
+      height: 350px;
+      /* z-index: 1;
+      position: absolute; */
    }
   
-  
-  .spins {
-     margin-left: 25%;
-     margin-top: 20%;
-     z-index: -1;
-  }
-  
-  .treee {
-     position: absolute;
-     width: 250px;
-     height: 300px;
-     z-index: 2;
-     margin-left: 33%;
-     margin-top: -10%;
-  }
-  
-  .Pic {
-     position: absolute;
-     z-index: 2;
-     width: 100%;
-  }
-  
-  #reduce {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 30%;
-     height: 50px;
-     z-index: -3;
-     bottom: 20%;
-     margin-left: 36%;
-  }
-  
-  #reuse {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 30%;
-     height: 50px;
-     z-index: -4;
-     bottom: 20%;
-     margin-left: 36%;
-  }
-  
-  #recycle {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 30%;
-     height: 50px;
-     z-index: -5;
-     bottom: 20%;
-     margin-left: 36%;
-  }
-  
-  .left {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 20%;
-     height: 60px;
-     z-index: -5;
-     bottom: 20%;
-     margin-left: 6%;
-     border-radius: 50px;
-     font-size: 50px;
-  }
-  
-  .right {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 20%;
-     height: 60px;
-     z-index: -5;
-     bottom: 20%;
-     margin-left: 75%;
-     border-radius: 80px;
-     font-size: 50px;
-  }
-  
-  #reduce1 {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 60%;
-     height: 60px;
-     z-index: -3;
-     bottom: 1%;
-     margin-left: 22%;
-  }
-  
-  #reuse1 {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 60%;
-     height: 60px;
-     z-index: -4;
-     bottom: 1%;
-     margin-left: 22%;
-  }
-  
-  #recycle1 {
-     position: absolute;
-     background-color: green;
-     border-radius: 10px;
-     width: 60%;
-     height: 60px;
-     z-index: -5;
-     bottom: 1%;
-     margin-left: 22%;
-  }
+   .tree {
+      /* position: absolute; */
+      width: 200px;
+      /* height: 300px; */
+      z-index: 2;
+      /* margin-left: 33%;
+      margin-top: -10%; */
+   }
 }
 

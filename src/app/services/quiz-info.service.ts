@@ -1,4 +1,3 @@
-  
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,6 +7,7 @@ import { QuestionsAndAnswers } from '../models/question-and-answers';
 @Injectable({
   providedIn: 'root'
 })
+
 export class QuizInfoService {
 
   questionsAndAnswers: QuestionsAndAnswers[];

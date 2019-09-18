@@ -1,50 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
-</head>
-<body> 
-  <header>
-    <div id="banner">
-      <nav role="navigation">
-          <div id="menuToggle">
+<div id="banner">
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" id="menuButton" />
       
-            <input type="checkbox" id="menuButton" />
-          
-            <!-- Hamburger Menu Icons -->
-            <span></span>
-            <span></span>
-            <span></span>
-            
-            <ul id="menu">
-              <a (click)="optionClicked()" routerLink="home"><li>Home</li></a>
-              <a (click)="optionClicked()" routerLink="reduce"><li>Reduce</li></a>
-              <a (click)="optionClicked()" routerLink="reuse"><li>Reuse</li></a>
-              <a (click)="optionClicked()" routerLink="recycle"><li>Recycle</li></a>
-              <a (click)="optionClicked()" routerLink="AboutUs"><li>About Us</li></a>
-            </ul>
-            <!-- <div>
-              <p></p>
-            </div> -->
-          </div>
-        </nav>
-        <div id="logo">Sprout</div>
-    </div>  
-  </header> 
-  <p>
+      <!-- Hamburger Menu Icons -->
+      <span></span>
+      <span></span>
+      <span></span>
       
-  </p>
-  <p>
-  </p>
-  <p>
-  </p>
-  <p>
-    some content
-  </p>
-  <p>
-   
-  </p>
-  <router-outlet></router-outlet>
-</body>
-</html>
+      <ul id="menu">
+        <a (click)="optionClicked()" routerLink="home"><li>Home</li></a>
+        <a (click)="optionClicked()" routerLink="reduce"><li>Reduce</li></a>
+        <a (click)="optionClicked()" routerLink="reuse"><li>Reuse</li></a>
+        <a (click)="optionClicked()" routerLink="recycle"><li>Recycle</li></a>
+        <a (click)="optionClicked()" routerLink="AboutUs"><li>About Us</li></a>
+      </ul>
+    </div>
+  </nav>
+  <ul id="bigMenu">
+    <a (click)="optionClicked()" routerLink="home"><li>Home</li></a>
+    <a (click)="optionClicked()" routerLink="reduce"><li>Reduce</li></a>
+    <a (click)="optionClicked()" routerLink="reuse"><li>Reuse</li></a>
+    <a (click)="optionClicked()" routerLink="recycle"><li>Recycle</li></a>
+    <a (click)="optionClicked()" routerLink="AboutUs"><li>About Us</li></a>
+  </ul>
+  <div id="logo">Sprout</div>
+</div>  
+<p>
+    
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+  some content
+</p>
+<p>
+  
+</p>
+<router-outlet></router-outlet>
