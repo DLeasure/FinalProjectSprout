@@ -88,7 +88,7 @@ html {
    z-index: 3;
    color: #f5f5f5;
    font-family: 'Caveat', cursive;
-   font-size: 1em;
+   font-size: 1.1em;
    /* bottom: 20%; */
    /* margin-left: 36%; */
    margin: 5px 0px 0px 0px;
@@ -113,6 +113,12 @@ button:focus {
    justify-content: center;
    align-items: center;
    align-content: center;
+}
+
+#activeFacts {
+   text-align: center;
+   margin-left: 10%;
+   margin-right: 10%;
 }
 
 #reuse {
