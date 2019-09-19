@@ -1,0 +1,5 @@
+{
+    "name": "sprout-gc",
+    "description": "Sprout App",
+    "image": "heroku/nodejs"
+}
