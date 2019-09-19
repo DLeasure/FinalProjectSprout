@@ -96,6 +96,10 @@ html {
    transform: translateX(-50%);
 }
 
+button:hover {
+   cursor: pointer;
+}
+
 button:focus {
    outline:0;
 }

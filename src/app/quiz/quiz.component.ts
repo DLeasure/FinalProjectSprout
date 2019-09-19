@@ -8,12 +8,14 @@ import { QuestionsAndAnswers } from '../models/question-and-answers';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-
+ 
   _questionsAndAnswers: QuestionsAndAnswers[];
   _displayTitle: boolean;
   _questionAndAnswer: QuestionsAndAnswers;
   _numberCorrect: number;
   _answers: string[];
+  previousAnswerStatus: string;
+  numOfQuestionsAsked: number;
 
   constructor(
     private _quizInfoService: QuizInfoService,
@@ -196,6 +198,7 @@ export class QuizComponent implements OnInit {
 
   startQuiz() {
     this._numberCorrect = 0;
+    this.numOfQuestionsAsked = 0;
     this._displayTitle = false;
     this._questionAndAnswer = this.getQuestion();
     this._answers = this.generateOrderForAnswers();
@@ -203,16 +206,17 @@ export class QuizComponent implements OnInit {
 
   submitAnswer(answer: string) {
     const index = this._questionsAndAnswers.indexOf(this._questionAndAnswer);
+    this.numOfQuestionsAsked += 1;
     if (this._questionAndAnswer.answer === answer) {
       this._questionsAndAnswers[index].correct = true;
       this._questionsAndAnswers[index].answered = true;
       this._numberCorrect += 1
       console.log(this._numberCorrect);
-      alert('Correct');
+      this.previousAnswerStatus = "Correct!";
     } else {
       this._questionsAndAnswers[index].correct = false;
       this._questionsAndAnswers[index].answered = true;
-      alert('Wrong');
+      this.previousAnswerStatus = "Incorrect";
     }
     console.log(this._questionsAndAnswers);
     this.getCorrectAmount();
