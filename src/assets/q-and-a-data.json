@@ -1,45 +1,28 @@
 [{
     "id": "1",
-    "question": "Which item does not belong in the recycling bin?",
-    "answer": "Laundry Detergent Bottle",
+    "question": "What is the answer 1?",
+    "answer": "This is the answer",
     "others": [
-        "Plastic Milk Jug",
-        "Plastic Soda Bottle"
+        "This is a possible 1",
+        "This is a possible 2"
     ]
 },
 {
     "id": "2",
-    "question": "Which aluminum item is not recyclable?",
-    "answer": "Pots and Pans",
+    "question": "What is the answer 2?",
+    "answer": "This is the answer",
     "others": [
-        "Soda Cans",
-        "Aluminum Foil"
+        "This is a possible 1",
+        "This is a possible 2"
     ]
 },
 {
     "id": "3",
-    "question": "When is America Recycles Day?",
-    "answer": "November 15",
+    "question": "What is the answer 3?",
+    "answer": "This is the answer",
     "others": [
-        "July 4",
-        "February 14"
-    ]
-},
-{
-    "id": "4",
-    "question": "Who should you call for more information on recycling?",
-    "answer": "Centre County Solid Waste Authority",
-    "others": [
-        "Police Department",
-        "Humane Society"
-    ]
-},
-{
-    "id": "5",
-    "question": "Can you recycle cereal boxes in Centre County?",
-    "answer": "Yes",
-    "others": [
-        "No"
+        "This is a possible1 ",
+        "This is a possible 2"
     ]
 }
 ]
