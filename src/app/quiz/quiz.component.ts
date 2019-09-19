@@ -14,6 +14,7 @@ export class QuizComponent implements OnInit {
   _questionAndAnswer: QuestionsAndAnswers;
   _numberCorrect: number;
   _answers: string[];
+  quizComplete: boolean;
   previousAnswerStatus: string;
   numOfQuestionsAsked: number;
 
@@ -26,6 +27,7 @@ export class QuizComponent implements OnInit {
   }
   
   initalize() {
+    this.quizComplete = false;
     this._displayTitle = true;
     this._quizInfoService.getJson().subscribe(this.onSuccess.bind(this), this.onError.bind(this));
     this.makeTree();
@@ -222,7 +224,8 @@ export class QuizComponent implements OnInit {
     this.getCorrectAmount();
     this._questionAndAnswer = this.getQuestion();
     if (this._questionAndAnswer === undefined) {
-      this.initalize();
+      // this.initalize();
+      this.quizComplete = true;
       return;
     }
     this._answers = this.generateOrderForAnswers();
