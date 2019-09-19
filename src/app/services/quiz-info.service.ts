@@ -7,7 +7,6 @@ import { QuestionsAndAnswers } from '../models/questions-and-answers';
 @Injectable({
   providedIn: 'root'
 })
-
 export class QuizInfoService {
 
   questionsAndAnswers: QuestionsAndAnswers[];
