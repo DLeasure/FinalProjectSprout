@@ -26,7 +26,6 @@ export class QuizComponent implements OnInit {
   initalize() {
     this._displayTitle = true;
     this._quizInfoService.getJson().subscribe(this.onSuccess.bind(this), this.onError.bind(this));
-    this.makeTree();
   }
 
   generateOrderForAnswers() {
@@ -44,7 +43,7 @@ export class QuizComponent implements OnInit {
 
   onSuccess(items: QuestionsAndAnswers[]) {
     const final = items.map((res: any) => {
-    
+    this.makeTree();
       return { id: res.id, question: res.question, answer: res.answer, others: res.others, answered: false, correct: false, image: 'img/html.png' };
     });
     this._questionsAndAnswers = final;
@@ -100,7 +99,7 @@ export class QuizComponent implements OnInit {
       }
     
       function get_random_length(start_length) {
-          return start_length - (4 + (Math.random() * 15));
+          return start_length - (4 + (Math.random() * 18));
       }
     
       function get_random_angle(start_angle, direction) {
@@ -189,7 +188,7 @@ export class QuizComponent implements OnInit {
     
           requestAnimationFrame(game_loop);
       }
-        window.onload = main;
+      window.onclick = main;
     
   })();
   }
@@ -218,6 +217,7 @@ export class QuizComponent implements OnInit {
     this.getCorrectAmount();
     this._questionAndAnswer = this.getQuestion();
     if (this._questionAndAnswer === undefined) {
+      this.makeTree();
       this.initalize();
       return;
     }
