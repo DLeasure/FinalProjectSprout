@@ -10,8 +10,8 @@
         </div>
     </div> 
     <div *ngIf="quizComplete" class="quizComplete">
-        Final Score: {{_numberCorrect}}/{{ numOfQuestionsAsked }}
-        <button (click)="initalize()">Start Over</button>
+        Final Score: {{_numberCorrect}}/{{ numOfQuestionsAsked }} <br />
+        <button (click)="initalize()" id="startOverButton">Start Over</button>
     </div>
 </div>
 
